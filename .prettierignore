@@ -1,0 +1,11 @@
+.cache
+package-lock.json
+.dccache
+node-modules
+.next
+.vercel
+public
+studio
+yarn.lock
+tsconfig.tsbuildinfo
+out

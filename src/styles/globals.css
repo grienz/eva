@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  min-width: 360px;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background-color: #6ffcb8;
+  color: #1e1919;
+}
+/* https://seek-oss.github.io/capsize/ */
+.capsize::before {
+  display: table;
+}
+
+.capsize::after {
+  display: table;
+}
+
+.autocomplete {
+  @apply block w-full text-gray-800 bg-white border border-gray-200 rounded-md dark:border-gray-900 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-800 dark:text-gray-100;
+}
+
+.nav-link {
+  @apply items-center transition-all delay-100  hover:text-teal-800 dark:hover:text-teal-400;
+}
+
+.skip-nav {
+  @apply absolute px-4 py-3 transition-transform duration-200 transform -translate-y-12 -left-1/4 focus:top-4 focus:translate-y-3 -top-8;
+}
+
+#skip {
+  scroll-margin-top: 1.125rem;
+}
+
+@supports not (backdrop-filter: none) {
+  .sticky-nav {
+    backdrop-filter: none;
+    @apply bg-opacity-100;
+  }
+}
+
+.prose .anchor {
+  @apply absolute invisible no-underline;
+
+  margin-left: -1em;
+  padding-right: 0.5em;
+  width: 80%;
+  max-width: 700px;
+  cursor: pointer;
+}
+
+.anchor:hover {
+  @apply visible;
+}
+
+.prose a {
+  @apply transition-all;
+}
+
+.prose .anchor:after {
+  @apply text-gray-300 dark:text-gray-700;
+  content: '#';
+}
+
+.prose *:hover > .anchor {
+  @apply visible;
+}
+
+.prose pre {
+  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+}
+.prose strong {
+  @apply text-neutral-700 dark:text-neutral-300 font-semibold;
+}
+
+.prose em {
+  @apply text-neutral-700 dark:text-neutral-300;
+}
+.prose img {
+  /* Don't apply styles to next/image */
+  @apply rounded-lg;
+}
+
+.prose > :first-child {
+  /* Override removing top margin, causing layout shift */
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
