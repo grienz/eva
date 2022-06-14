@@ -1,0 +1,38 @@
+{
+  "Product": {
+    "paginated_products": "Ürünler",
+    "more_products": "Daha fazla ürün göster",
+    "previous_page": "Önceki sayfa",
+    "next_page": "Sonraki sayfa"
+  },
+  "Navigation": {
+    "home": " Anasayfa",
+    "product": "Ürünler",
+    "categories": "Kategoriler",
+    "about": "Hakkımızda",
+    "contact": "İletişim",
+    "copyright": "Tüm hakları saklıdır.",
+    "sourcecode": "Kaynak kodu",
+    "flag": " 🇹🇷"
+  },
+  "Titles": {
+    "categories": "Kategoriler",
+    "model_related_articles": "Bu modelde olan ürünler, ",
+    "tag_related_articles": "Aynı özellikte olan ürünler, ",
+    "product_page": "Ürünler",
+    "featured_products": "Öne çıkan ürünler",
+    "related_products": "Benzer ürünler",
+    "models": "Modeller",
+    "tags": "Çeşitler"
+  },
+  "404": {
+    "title": "Bir hata oluştu",
+    "body": "Sayfa bulunamadı",
+    "button": "Anasayfaya dön"
+  },
+  "500": {
+    "title": "500",
+    "body": "Sayfa bulunamadı",
+    "button": "Anasayfaya dön"
+  }
+}

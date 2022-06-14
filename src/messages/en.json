@@ -1,0 +1,38 @@
+{
+  "Product": {
+    "paginated_products": "Products",
+    "more_products": "More products",
+    "previous_page": "Previous page",
+    "next_page": "Next page"
+  },
+  "Navigation": {
+    "home": " Home",
+    "product": "Products",
+    "categories": "Categories",
+    "about": "About",
+    "contact": "Contact",
+    "copyright": "Copyright",
+    "sourcecode": "Source code",
+    "flag": " 🇬🇧"
+  },
+  "Titles": {
+    "categories": "Categories",
+    "model_related_articles": "Related model products, ",
+    "tag_related_articles": "Related properties products, ",
+    "product_page": "Product ",
+    "featured_products": "Featured products",
+    "related_products": "Related products",
+    "models": "Models",
+    "tags": "Types"
+  },
+  "404": {
+    "title": "Something went wrong",
+    "body": "Page not found",
+    "button": "Back to home"
+  },
+  "500": {
+    "title": "500",
+    "body": "Internal server error",
+    "button": "Back to home"
+  }
+}

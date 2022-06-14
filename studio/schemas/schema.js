@@ -45,6 +45,121 @@ const localePortableText = {
   }))
 };
 
+const modelSchema = {
+  name: 'model',
+  title: 'Model',
+  description: 'Model hakkında bilgi ve instagram linki ekleyebilirsiniz.',
+  type: 'document',
+  preview: {
+    select: {
+      title: `title.${baseLanguage.id}`
+    }
+  },
+  fields: [
+    {
+      name: 'title',
+      title: 'Model İsmi',
+      validation: (Rule) => Rule.required(),
+      type: 'localeString'
+    },
+    {
+      name: 'slug',
+      title: 'Model Uzantı',
+      validation: (Rule) => Rule.required(),
+      type: 'slug',
+      options: {
+        source: 'name'
+      }
+    },
+    {
+      name: 'picture',
+      title: 'Model Fotoğrafı',
+      validation: (Rule) => Rule.required(),
+      type: 'image'
+    },
+    {
+      name: 'info',
+      title: 'Model hakkında bilgi',
+      type: 'localePortableText'
+    },
+    {
+      name: 'social',
+      title: 'Sosyal medya linki',
+      type: 'array',
+      of: [
+        {
+          type: 'string',
+          options: {}
+        }
+      ]
+    }
+  ]
+};
+
+const breakSchema = {
+  name: 'break',
+  type: 'object',
+  title: 'Break',
+  fields: [
+    {
+      name: 'style',
+      type: 'string',
+      title: 'Break style',
+      options: {
+        list: [
+          {
+            title: 'Line break',
+            value: 'lineBreak'
+          },
+          {
+            title: 'Read more',
+            value: 'readMore'
+          }
+        ]
+      }
+    }
+  ]
+};
+const pageSchema = {
+  name: 'page',
+  title: 'Sayfa',
+  description: 'Hakkımızda iletişim gibi sayfalar oluşturabilirsiniz.',
+  type: 'document',
+  preview: {
+    select: {
+      title: `title.${baseLanguage.id}`
+    }
+  },
+  fields: [
+    {
+      name: 'title',
+      title: 'Sayfa başlığı',
+      validation: (Rule) => Rule.required(),
+      type: 'localeString'
+    },
+    {
+      name: 'slug',
+      title: 'Sayfa uzantısı',
+      validation: (Rule) => Rule.required(),
+      type: 'slug',
+      options: {
+        source: 'title'
+      }
+    },
+    {
+      name: 'picture',
+      title: 'Sayfa fotoğrafı',
+      validation: (Rule) => Rule.required(),
+      type: 'image'
+    },
+    {
+      name: 'text',
+      title: 'Sayfa içeriği',
+      type: 'localePortableText'
+    }
+  ]
+};
+
 const productSchema = {
   name: 'product',
   title: 'Ürün',
@@ -105,7 +220,7 @@ const productSchema = {
       type: 'localePortableText'
     },
     {
-      name: 'properties',
+      name: 'tags',
       title: 'Ürün için özellik ekleyiniz',
       validation: (Rule) => Rule.required(),
       type: 'array',
@@ -114,7 +229,7 @@ const productSchema = {
           type: 'reference',
           to: [
             {
-              type: 'property'
+              type: 'tag'
             }
           ]
         }
@@ -141,166 +256,6 @@ const productSchema = {
   ]
 };
 
-const propertySchema = {
-  name: 'property',
-  title: 'Özellik',
-  description: 'Profil cam gibi özellikler giriniz.',
-  type: 'document',
-  preview: {
-    select: {
-      title: `title.${baseLanguage.id}`
-    }
-  },
-  fields: [
-    {
-      name: 'title',
-      title: 'Özellik ismi',
-      validation: (Rule) => Rule.required(),
-      type: 'localeString'
-    },
-    {
-      name: 'slug',
-      title: 'Özellik uzantısı',
-      validation: (Rule) => Rule.required(),
-      type: 'slug',
-      options: {
-        source: 'title'
-      }
-    },
-    {
-      name: 'picture',
-      title: 'Özellik fotoğrafı',
-      validation: (Rule) => Rule.required(),
-      type: 'image',
-      options: {
-        hotspot: true
-      }
-    },
-    {
-      name: 'text',
-      title: 'Açıklaması',
-      validation: (Rule) => Rule.required(),
-      type: 'localePortableText'
-    }
-  ]
-};
-
-const modelSchema = {
-  name: 'model',
-  title: 'Model',
-  description: 'Model hakkında bilgi ve instagram linki ekleyebilirsiniz.',
-  type: 'document',
-  preview: {
-    select: {
-      title: `title.${baseLanguage.id}`
-    }
-  },
-  fields: [
-    {
-      name: 'title',
-      title: 'Model İsmi',
-      validation: (Rule) => Rule.required(),
-      type: 'localeString'
-    },
-    {
-      name: 'slug',
-      title: 'Model Uzantı',
-      validation: (Rule) => Rule.required(),
-      type: 'slug',
-      options: {
-        source: 'name'
-      }
-    },
-    {
-      name: 'picture',
-      title: 'Model Fotoğrafı',
-      validation: (Rule) => Rule.required(),
-      type: 'image'
-    },
-    {
-      name: 'description',
-      title: 'Model hakkında açıklama',
-      type: 'localePortableText'
-    },
-    {
-      name: 'social',
-      title: 'Sosyal medya linki',
-      type: 'array',
-      of: [
-        {
-          type: 'string',
-          options: {}
-        }
-      ]
-    }
-  ]
-};
-
-const pageSchema = {
-  name: 'page',
-  title: 'Sayfa',
-  description: 'Hakkımızda iletişim gibi sayfalar oluşturabilirsiniz.',
-  type: 'document',
-  preview: {
-    select: {
-      title: `title.${baseLanguage.id}`
-    }
-  },
-  fields: [
-    {
-      name: 'title',
-      title: 'Sayfa başlığı',
-      validation: (Rule) => Rule.required(),
-      type: 'localeString'
-    },
-    {
-      name: 'slug',
-      title: 'Sayfa uzantısı',
-      validation: (Rule) => Rule.required(),
-      type: 'slug',
-      options: {
-        source: 'title'
-      }
-    },
-    {
-      name: 'picture',
-      title: 'Sayfa fotoğrafı',
-      validation: (Rule) => Rule.required(),
-      type: 'image'
-    },
-    {
-      name: 'text',
-      title: 'Sayfa içeriği',
-      type: 'localePortableText'
-    }
-  ]
-};
-
-const breakSchema = {
-  name: 'break',
-  type: 'object',
-  title: 'Break',
-  fields: [
-    {
-      name: 'style',
-      type: 'string',
-      title: 'Break style',
-      options: {
-        list: [
-          {
-            title: 'Line break',
-            value: 'lineBreak'
-          },
-          {
-            title: 'Read more',
-            value: 'readMore'
-          }
-        ]
-      }
-    }
-  ]
-};
-
 const portableTextSchema = {
   name: 'portableText',
   type: 'array',
@@ -322,7 +277,7 @@ const portableTextSchema = {
               type: 'model'
             },
             {
-              type: 'property'
+              type: 'tag'
             },
             {
               type: 'page'
@@ -391,7 +346,7 @@ const portableTextSchema = {
                 type: 'model'
               },
               {
-                type: 'property'
+                type: 'tag'
               },
               {
                 type: 'page'
@@ -417,12 +372,56 @@ const portableTextSchema = {
           type: 'model'
         },
         {
-          type: 'property'
+          type: 'tag'
         },
         {
           type: 'page'
         }
       ]
+    }
+  ]
+};
+
+const tagSchema = {
+  name: 'tag',
+  title: 'Özellik',
+  description: 'Profil cam gibi özellikler giriniz.',
+  type: 'document',
+  preview: {
+    select: {
+      title: `title.${baseLanguage.id}`
+    }
+  },
+  fields: [
+    {
+      name: 'title',
+      title: 'Özellik ismi',
+      validation: (Rule) => Rule.required(),
+      type: 'localeString'
+    },
+    {
+      name: 'slug',
+      title: 'Özellik uzantısı',
+      validation: (Rule) => Rule.required(),
+      type: 'slug',
+      options: {
+        source: 'title'
+      }
+    },
+    {
+      name: 'picture',
+      title: 'Özellik fotoğrafı',
+      validation: (Rule) => Rule.required(),
+      type: 'image',
+      options: {
+        hotspot: true
+      }
+    },
+    {
+      name: 'text',
+      title: 'Açıklaması',
+      validation: (Rule) => Rule.required(),
+      type: 'localePortableText'
     }
   ]
 };
@@ -434,7 +433,7 @@ export default createSchema({
     portableTextSchema,
     productSchema,
     modelSchema,
-    propertySchema,
+    tagSchema,
     pageSchema,
     localeString,
     localePortableText
