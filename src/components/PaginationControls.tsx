@@ -13,7 +13,7 @@ export function PaginationControls({ currentPage, totalPages = 0 }) {
           <span>{` ← ${t('previous_page')}`}</span>
         </p>
       ) : (
-        <Link href={`/product/p/${Number(currentPage - 1)}`}>
+        <Link href={`/product/list/${Number(currentPage - 1)}`}>
           <a className="group  inline-flex items-center font-medium hover:text-teal-600 text-base  transition-all delay-100 dark:hover:text-teal-400">
             <span>{`← ${t('previous_page')}`}</span>
           </a>
@@ -24,7 +24,7 @@ export function PaginationControls({ currentPage, totalPages = 0 }) {
           <span>{`${t('next_page')} →`}</span>
         </p>
       ) : (
-        <Link href={`/product/p/${Number(currentPage + 1)}`}>
+        <Link href={`/product/list/${Number(currentPage + 1)}`}>
           <a className="group  inline-flex items-center font-medium  hover:text-teal-600  transition-all delay-100 dark:hover:text-teal-400">
             <span>{`${t('next_page')} →`}</span>
           </a>

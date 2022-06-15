@@ -16,7 +16,7 @@ export const globalConfig = {
   },
   menuLinks: [
     { href: '/', title: 'home' },
-    { href: '/product/p/1', title: 'product' },
+    { href: '/product/list/1', title: 'product' },
     { href: '/categories', title: 'categories' },
     { href: '/about', title: 'about' },
     { href: '/contact', title: 'contact' }

@@ -1,4 +1,10 @@
-import { facebook, instagram, telegram, youtube } from '@/components/Icons';
+import {
+  facebook,
+  instagram,
+  mail,
+  telegram,
+  youtube
+} from '@/components/Icons';
 import { globalConfig } from '@/config/global.config';
 
 export const shimmer = (w, h) => `
@@ -39,6 +45,9 @@ export function getSocialIconByLink(url) {
   }
   if (url.search(/instagram/i) !== -1) {
     return instagram;
+  }
+  if (url.search(/mailto:/i) !== -1) {
+    return mail;
   }
 
   return null;

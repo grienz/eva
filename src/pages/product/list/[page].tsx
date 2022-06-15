@@ -54,7 +54,7 @@ export async function getStaticPaths({ locales }) {
   )
     .map((page) =>
       locales.map((locale) => ({
-        params: { page: `/product/p/${page}` },
+        params: { page: `/product/list/${page}` },
         locale
       }))
     )
