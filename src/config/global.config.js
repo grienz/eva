@@ -27,6 +27,7 @@ export const globalConfig = {
   facebookLink: 'https://www.facebook.com/evasmartshower/',
   githubLink: 'https://github.com/grienz/evasmartshower',
   youtubeLink: 'https://www.youtube.com/channel',
+  mail: 'mailto:evasmartshower@gmail.com',
   copyright: 'Eva Smart Shower',
   trimmedHeaderLength: 55
 };

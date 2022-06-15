@@ -1,7 +1,13 @@
 import { useTranslations } from 'next-intl';
 
 import { ExternalLink } from '@/components/ExternalLink';
-import { facebook, github, instagram, telegram } from '@/components/Icons';
+import {
+  facebook,
+  github,
+  instagram,
+  mail,
+  telegram
+} from '@/components/Icons';
 import { NavItemFooter } from '@/components/NavItemFooter';
 import { SectionSeparator } from '@/components/SectionSeparator';
 import { globalConfig } from '@/config/global.config';
@@ -34,6 +40,7 @@ export function Footer() {
           <ExternalLink href={globalConfig.instagramLink}>
             {instagram}
           </ExternalLink>
+          <ExternalLink href={globalConfig.mail}>{mail}</ExternalLink>
         </div>
       </div>
       <div className="flex justify-center mt-8 text-sm">
