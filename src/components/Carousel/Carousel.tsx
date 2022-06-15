@@ -6,7 +6,7 @@ import { truncate } from '@/lib/contentUtils';
 
 export function Carousel({ title, previewImage, slug }) {
   return (
-    <div>
+    <div className="carousel slide carousel-fade carousel-dark relative ">
       <SanityImage
         slug={slug}
         alt={title}

@@ -7,17 +7,12 @@ import '@fontsource/ibm-plex-sans/700.css';
 import 'nprogress/nprogress.css';
 
 import type { AppProps } from 'next/app';
-import Router from 'next/router';
 import { NextIntlProvider } from 'next-intl';
 import { DefaultSeo } from 'next-seo';
 import { ThemeProvider } from 'next-themes';
-import nProgress from 'nprogress';
 
+import ProgressBar from '@/components/ProgressBar';
 import SEO from '@/config/next-seo.config';
-
-Router.events.on('routeChangeStart', nProgress.start);
-Router.events.on('routeChangeError', nProgress.done);
-Router.events.on('routeChangeComplete', nProgress.done);
 
 function App({ Component, pageProps }: AppProps) {
   return (
@@ -38,6 +33,7 @@ function App({ Component, pageProps }: AppProps) {
         <ThemeProvider attribute="class">
           <DefaultSeo {...SEO} />
           <Component {...pageProps} />
+          <ProgressBar />
         </ThemeProvider>
       </NextIntlProvider>
     </>

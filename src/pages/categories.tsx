@@ -2,8 +2,8 @@ import Link from 'next/link';
 import { useTranslations } from 'next-intl';
 
 import { AvatarImage } from '@/components/AvatarImage';
+import { ProductCarousel } from '@/components/Carousel/ProductCarousel';
 import { Container } from '@/components/Container';
-import { ProductCarousel } from '@/components/ProductCarousel';
 import {
   getFeaturedProducts,
   getModelsAndRelatedProductsCount,
@@ -28,7 +28,7 @@ export default function GetAllModelsAndTags({
         <ProductCarousel products={featuredProducts} />
       )}
 
-      <div className="flex flex-col  justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto min-h-screen">
+      <div className="flex flex-col  justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16 min-h-screen">
         <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 mb-16 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 pb-4 md:space-y-5">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight sm:leading-10 md:border-r-2 md:pr-6   text-gray-800 dark:text-gray-200">
@@ -54,7 +54,7 @@ export default function GetAllModelsAndTags({
               })}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
+        <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 mb-16 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 pb-4 md:space-y-5">
             <h1 className="text-3xl md:text-5xl font-bold tracking-tight sm:leading-10 md:border-r-2 md:pr-6   text-gray-800 dark:text-gray-200">
               {t('tags')}
