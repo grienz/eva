@@ -1,22 +1,25 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
 
-import { Container } from '@/components/Container';
-import { MoreproductsControls } from '@/components/MoreProductsControls';
-import { PageTop } from '@/components/PageTop';
-import { ProductsGrid } from '@/components/ProductsGrid';
-import { SectionSeparator } from '@/components/SectionSeparator';
-import { Subtitle } from '@/components/Subtitle';
+import { Container } from "@/components/Container";
+import { MoreproductsControls } from "@/components/MoreProductsControls";
+import { PageTop } from "@/components/PageTop";
+import { ProductsGrid } from "@/components/ProductsGrid";
+import { SectionSeparator } from "@/components/SectionSeparator";
+import { Subtitle } from "@/components/Subtitle";
 import {
   getFeaturedProducts,
   getPageContent,
   getTotalProductsNumber
-} from '@/lib/api';
+} from "@/utils/api";
 
-export default function Index({ pageData, featuredProducts, total }) {
-  const t = useTranslations('Titles');
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
+
+export default function Index({ pageData, featuredProducts, total }: Props) {
+  const t = useTranslations("Titles");
   return (
     <Container title={pageData.pageTitle}>
-      <div className="flex flex-col justify-center items-start max-w-2xl  mx-auto pb-16">
+      <div className="mx-auto flex max-w-2xl flex-col items-start  justify-center pb-16">
         {pageData && (
           <PageTop
             title={pageData.pageTitle}
@@ -25,8 +28,9 @@ export default function Index({ pageData, featuredProducts, total }) {
             text={pageData.pageText}
           />
         )}
+        <div className="relative mb-4 w-full"></div>
         <SectionSeparator />
-        <Subtitle>{t('featured_products')}</Subtitle>
+        <Subtitle>{t("featured_products")}</Subtitle>
         {featuredProducts?.length > 0 && (
           <ProductsGrid products={featuredProducts} />
         )}
@@ -36,9 +40,9 @@ export default function Index({ pageData, featuredProducts, total }) {
   );
 }
 
-export async function getStaticProps({ locale }) {
+export async function getStaticProps({ locale }: { locale: string }) {
   const featuredProducts = await getFeaturedProducts(locale);
-  const pageData = await getPageContent(locale, '/');
+  const pageData = await getPageContent(locale, "/");
   const total = await getTotalProductsNumber();
   return {
     props: {

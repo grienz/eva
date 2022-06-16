@@ -1,6 +1,8 @@
-import Link from 'next/link';
+import Link from "next/link";
 
-export function Tags({ tags }) {
+import type { TagBase } from "@/typings/schema-types";
+// eslint-disable-next-line import/prefer-default-export
+export function Tags({ tags }: { tags: TagBase[] }) {
   return (
     <>
       {tags &&

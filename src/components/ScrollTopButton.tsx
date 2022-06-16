@@ -1,6 +1,6 @@
-import { motion, useAnimation, useViewportScroll } from 'framer-motion';
-import { useEffect } from 'react';
-import { FaArrowCircleUp } from 'react-icons/fa';
+import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { useEffect } from "react";
+import { FaArrowCircleUp } from "react-icons/fa";
 
 const ScrollTopButton = (): JSX.Element => {
   const { scrollY } = useViewportScroll();
@@ -12,7 +12,7 @@ const ScrollTopButton = (): JSX.Element => {
         opacity: 1,
         transition: {
           duration: 0.45,
-          ease: 'easeIn'
+          ease: "easeIn"
         }
       });
     } else {
@@ -25,14 +25,14 @@ const ScrollTopButton = (): JSX.Element => {
   });
 
   const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
     <motion.div animate={animation}>
       <FaArrowCircleUp
         onClick={scrollTop}
-        className="fixed bottom-3 right-1 h-10 w-10 text-gray-800 dark:text-gray-50 hover:text-teal-800 dark:hover:text-teal-400 hover:cursor-pointer md:right-10 md:bottom-10"
+        className="fixed bottom-3 right-1 h-10 w-10 text-gray-800 hover:cursor-pointer hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:right-10 md:bottom-10"
       />
     </motion.div>
   );

@@ -1,27 +1,39 @@
 /* eslint-disable simple-import-sort/imports */
 /* eslint-disable import/order */
-import { getSanityClient } from './sanity';
-import { getSkipValue } from './contentUtils';
-import { globalConfig } from '@/config/global.config';
+import type {
+  Model,
+  Page,
+  Product,
+  ProductBase,
+  ProductsByModel,
+  ProductsByTag,
+  Slug,
+  Tag
+} from "@/typings/schema-types";
+import { globalConfig } from "./global.config";
+import { getSkipValue } from "./contentUtils";
+import { getSanityClient } from "./sanity";
 
 import {
+  getAllModelSlugsQuery,
+  getAllProductSlugsQuery,
+  getAllTagSlugsQuery,
+  getModelAndRelatedProductsQuery,
+  getModelsAndRelatedProductsCountQuery,
   getFeaturedProductsQuery,
   getPageContentQuery,
-  getAllProductSlugsQuery,
-  getAllModelSlugsQuery,
-  getAllTagSlugsQuery,
-  getProductAndRelatedProductsQuery,
-  getModelAndRelatedProductsQuery,
-  getTagAndRelatedProductsQuery,
   getPaginatedProductsQuery,
+  getProductAndRelatedProductsQuery,
+  getTagAndRelatedProductsQuery,
   getTagsAndRelatedProductsCountQuery,
-  getModelsAndRelatedProductsCountQuery,
   getTotalProductsNumberQuery
-} from './queries';
+} from "./queries";
 
 const client = getSanityClient({ useCdn: false });
 
-export async function getFeaturedProducts(locale) {
+export async function getFeaturedProducts(
+  locale: string
+): Promise<ProductBase[]> {
   const data = await client.fetch(getFeaturedProductsQuery, {
     locale,
     skip: 0,
@@ -30,7 +42,10 @@ export async function getFeaturedProducts(locale) {
   return data;
 }
 
-export async function getPageContent(locale, slug) {
+export async function getPageContent(
+  locale: string,
+  slug: string
+): Promise<Page> {
   const data = await client.fetch(getPageContentQuery, {
     locale,
     slug
@@ -38,26 +53,33 @@ export async function getPageContent(locale, slug) {
   return data;
 }
 
-export async function getModelsAndRelatedProductsCount(locale) {
+export async function getModelsAndRelatedProductsCount(
+  locale: string
+): Promise<ProductsByModel[]> {
   const data = await client.fetch(getModelsAndRelatedProductsCountQuery, {
     locale
   });
   return data;
 }
 
-export async function getTagsAndRelatedProductsCount(locale) {
+export async function getTagsAndRelatedProductsCount(
+  locale: string
+): Promise<ProductsByTag[]> {
   const data = await client.fetch(getTagsAndRelatedProductsCountQuery, {
     locale
   });
   return data;
 }
 
-export async function getAllTagSlugs() {
+export async function getAllTagSlugs(): Promise<Slug[]> {
   const data = await client.fetch(getAllTagSlugsQuery);
   return data;
 }
 
-export async function getTagAndRelatedProducts(locale, slug) {
+export async function getTagAndRelatedProducts(
+  locale: string,
+  slug: string
+): Promise<Tag> {
   const data = await client.fetch(getTagAndRelatedProductsQuery, {
     locale,
     slug,
@@ -67,12 +89,15 @@ export async function getTagAndRelatedProducts(locale, slug) {
   return data;
 }
 
-export async function getAllModelSlugs() {
+export async function getAllModelSlugs(): Promise<Slug[]> {
   const data = await client.fetch(getAllModelSlugsQuery);
   return data;
 }
 
-export async function getModelAndRelatedProducts(locale, slug) {
+export async function getModelAndRelatedProducts(
+  locale: string,
+  slug: string
+): Promise<Model> {
   const data = await client.fetch(getModelAndRelatedProductsQuery, {
     locale,
     slug,
@@ -82,12 +107,15 @@ export async function getModelAndRelatedProducts(locale, slug) {
   return data;
 }
 
-export async function getAllProductSlugs() {
+export async function getAllProductSlugs(): Promise<Slug[]> {
   const data = await client.fetch(getAllProductSlugsQuery);
   return data;
 }
 
-export async function getProductAndRelatedProducts(locale, slug) {
+export async function getProductAndRelatedProducts(
+  locale: string,
+  slug: string
+): Promise<Product> {
   const data = await client.fetch(getProductAndRelatedProductsQuery, {
     locale,
     slug,
@@ -97,7 +125,10 @@ export async function getProductAndRelatedProducts(locale, slug) {
   return data;
 }
 
-export async function getPaginatedProducts(locale, page) {
+export async function getPaginatedProducts(
+  locale: string,
+  page: number
+): Promise<ProductBase[]> {
   const data = await client.fetch(getPaginatedProductsQuery, {
     locale,
     skip: getSkipValue(page),
@@ -106,7 +137,7 @@ export async function getPaginatedProducts(locale, page) {
   return data;
 }
 
-export async function getTotalProductsNumber() {
+export async function getTotalProductsNumber(): Promise<number> {
   const totalProducts: number = await client.fetch(getTotalProductsNumberQuery);
   return Number(totalProducts);
 }

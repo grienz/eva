@@ -1,35 +1,45 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import type { ParsedUrlQuery } from "querystring";
 
-import { Container } from '@/components/Container';
-import { PageTop } from '@/components/PageTop';
-import { PaginationControls } from '@/components/PaginationControls';
-import { ProductsGrid } from '@/components/ProductsGrid';
-import { SectionSeparator } from '@/components/SectionSeparator';
-import { globalConfig } from '@/config/global.config';
+import { Container } from "@/components/Container";
+import { PageTop } from "@/components/PageTop";
+import { PaginationControls } from "@/components/PaginationControls";
+import { ProductsGrid } from "@/components/ProductsGrid";
+import { SectionSeparator } from "@/components/SectionSeparator";
 import {
   getPageContent,
   getPaginatedProducts,
   getTotalProductsNumber
-} from '@/lib/api';
+} from "@/utils/api";
+import { globalConfig } from "@/utils/global.config";
+
+interface IParams extends ParsedUrlQuery {
+  page: string;
+}
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
 
 export default function ProductIndexPage({
   pageData,
   paginatedProducts,
   page,
   totalPages
-}) {
-  const t = useTranslations('Titles');
-  if (!pageData || paginatedProducts?.lenght === 0) return <p>no data</p>;
+}: Props) {
+  const t = useTranslations("Titles");
+  if (!pageData || paginatedProducts?.length === 0) {
+    return <p>no data</p>;
+  }
 
   return (
-    <Container title={`${t('product_page')} ${page}/${totalPages}`}>
-      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+    <Container title={`${t("product_page")} ${page}/${totalPages}`}>
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
         <PageTop
           title={`${pageData.pageTitle} (${page}/${totalPages})`}
           subtitle=""
           pictureUrl={pageData.pagePicture}
           text={pageData.pageText}
         />
+        <div className="relative mb-4 w-full"></div>
         <SectionSeparator />
         {paginatedProducts?.length > 0 && (
           <ProductsGrid products={paginatedProducts} />
@@ -43,7 +53,7 @@ export default function ProductIndexPage({
   );
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths({ locales }: { locales: string[] }) {
   const totalProducts = await getTotalProductsNumber();
   const totalPages = Math.ceil(
     totalProducts / globalConfig.pagination.pageSize
@@ -54,23 +64,29 @@ export async function getStaticPaths({ locales }) {
   )
     .map((page) =>
       locales.map((locale) => ({
-        params: { page: `/product/list/${page}` },
+        params: { page: `/product/p/${page}` },
         locale
       }))
     )
     .flat();
   return {
     paths: allPathsWithLocales,
-    fallback: 'blocking'
+    fallback: "blocking"
   };
 }
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({
+  params,
+  locale
+}: {
+  params: IParams;
+  locale: string;
+}) {
   const paginatedProducts = await getPaginatedProducts(
     locale,
     Number(params.page)
   );
-  const pageData = await getPageContent(locale, '/');
+  const pageData = await getPageContent(locale, "/");
   const totalProducts = await getTotalProductsNumber();
   const totalPages = Math.ceil(
     totalProducts / globalConfig.pagination.pageSize

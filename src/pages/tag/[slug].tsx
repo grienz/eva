@@ -1,33 +1,40 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import type { ParsedUrlQuery } from "querystring";
 
-import { Container } from '@/components/Container';
-import { PageTop } from '@/components/PageTop';
-import { ProductsGrid } from '@/components/ProductsGrid';
-import { SectionSeparator } from '@/components/SectionSeparator';
-import { Subtitle } from '@/components/Subtitle';
-import { getAllTagSlugs, getTagAndRelatedProducts } from '@/lib/api';
+import { Container } from "@/components/Container";
+import { PageTop } from "@/components/PageTop";
+import { ProductsGrid } from "@/components/ProductsGrid";
+import { SectionSeparator } from "@/components/SectionSeparator";
+import { Subtitle } from "@/components/Subtitle";
+import { getAllTagSlugs, getTagAndRelatedProducts } from "@/utils/api";
 
-export default function Tag({ tag, sameTagProducts }) {
-  const t = useTranslations('Titles');
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
+
+export default function Tag({ tag, sameTagProducts }: Props) {
+  const t = useTranslations("Titles");
   return (
-    <Container title={tag.tagTitle} ogImage={tag.tagPicture}>
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto pb-16">
+    <Container title={tag.tagName} ogImage={tag.tagPicture}>
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-16">
         {tag && (
           <>
             <PageTop
-              title={tag.tagTitle}
+              title={tag.tagName}
               subtitle=""
               pictureUrl={tag.tagPicture}
               text={tag.tagText}
             />
             <SectionSeparator />
             <Subtitle>
-              {`${t('tag_related_articles')}
-              "${tag.tagTitle.toLowerCase()}"`}
+              {`${t("tag_related_articles")}
+              "${tag.tagName.toLowerCase()}"`}
             </Subtitle>
           </>
         )}
-        {sameTagProducts?.length > 0 && (
+        {sameTagProducts && sameTagProducts?.length > 0 && (
           <ProductsGrid products={sameTagProducts} />
         )}
       </div>
@@ -35,13 +42,13 @@ export default function Tag({ tag, sameTagProducts }) {
   );
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths({ locales }: { locales: string[] }) {
   const allTags = await getAllTagSlugs();
   const allPathsWithLocales = allTags
-    .map((tag) =>
+    .map(({ slug }) =>
       locales.map((locale) => ({
         params: {
-          slug: `/tag/${tag.slug}`
+          slug: `/tag/${slug}`
         },
         locale
       }))
@@ -49,14 +56,20 @@ export async function getStaticPaths({ locales }) {
     .flat();
   return {
     paths: allPathsWithLocales,
-    fallback: 'blocking'
+    fallback: "blocking"
   };
 }
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({
+  params,
+  locale
+}: {
+  params: IParams;
+  locale: string;
+}) {
   const { sameTagProducts, ...tag } = await getTagAndRelatedProducts(
     locale,
-    params.slug.replace(/\/$/, '').split('/').pop()
+    params.slug.replace(/\/$/, "").split("/").pop() as string
   );
   return {
     props: {

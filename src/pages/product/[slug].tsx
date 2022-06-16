@@ -1,19 +1,28 @@
-import { useTranslations } from 'next-intl';
+import { useTranslations } from "next-intl";
+import type { ParsedUrlQuery } from "querystring";
 
-import { Container } from '@/components/Container';
-import { ProductBody } from '@/components/ProductBody';
-import { ProductMeta } from '@/components/ProductMeta';
-import { ProductsGrid } from '@/components/ProductsGrid';
-import { SanityImage } from '@/components/SanityImage';
-import { SectionSeparator } from '@/components/SectionSeparator';
-import { Subtitle } from '@/components/Subtitle';
-import { Tags } from '@/components/Tags';
-import { globalConfig } from '@/config/global.config';
-import { getAllProductSlugs, getProductAndRelatedProducts } from '@/lib/api';
+import { Container } from "@/components/Container";
+import { ProductBody } from "@/components/ProductBody";
+import { ProductMeta } from "@/components/ProductMeta";
+import { ProductsGrid } from "@/components/ProductsGrid";
+import { SanityImage } from "@/components/SanityImage";
+import { SectionSeparator } from "@/components/SectionSeparator";
+import { Subtitle } from "@/components/Subtitle";
+import { Tags } from "@/components/Tags";
+import { getAllProductSlugs, getProductAndRelatedProducts } from "@/utils/api";
+import { globalConfig } from "@/utils/global.config";
 
-export default function Product({ product, relatedProducts }) {
-  const t = useTranslations('Titles');
-  if (!product || relatedProducts?.lenght === 0) return <p>no data</p>;
+interface IParams extends ParsedUrlQuery {
+  slug: string;
+}
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
+
+export default function Product({ product, relatedProducts }: Props) {
+  const t = useTranslations("Titles");
+  if (!product || relatedProducts?.length === 0) {
+    return <p>no data</p>;
+  }
   return (
     <Container
       title={product.productTitle}
@@ -21,36 +30,35 @@ export default function Product({ product, relatedProducts }) {
       date={product.productDate}
       type="article"
     >
-      <div className="flex flex-col justify-center items-start max-w-2xl mx-auto pb-16">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-16">
         <div className="flex flex-col">
-          <h1 className="font-bold text-3xl md:text-5xl tracking-tight  text-gray-800 dark:text-gray-200">
+          <h1 className="text-3xl font-bold tracking-tight text-gray-800  dark:text-gray-200 md:text-5xl">
             {product.productTitle}
           </h1>
-
+          <div className="mb-2 flex flex-row justify-end py-2 text-sm">
+            <Tags tags={product.tags} />
+          </div>
           <SanityImage
             alt={product.productTitle}
             url={product.productImageUrl}
             width={globalConfig.images.defaultProductImageWidth}
             height={globalConfig.images.defaultProductImageHeight}
           />
-          <ProductBody text={product.productText} />
 
-          <div className="flex flex-row mt-4">
+          <div className="mt-4 flex flex-row pt-2">
             <ProductMeta date={product.productDate} model={product.model} />
           </div>
         </div>
-        <div className="flex flex-row text-sm justify-end my-2">
-          <Tags tags={product.tags} />
-        </div>
+        <ProductBody text={product.productText} />
         <SectionSeparator />
-        <Subtitle>{t('related_products')}</Subtitle>
+        <Subtitle>{t("related_products")}</Subtitle>
         {relatedProducts && <ProductsGrid products={relatedProducts} />}
       </div>
     </Container>
   );
 }
 
-export async function getStaticPaths({ locales }) {
+export async function getStaticPaths({ locales }: { locales: string[] }) {
   const allProducts = await getAllProductSlugs();
   const allPathsWithLocales = allProducts
     .map(({ slug }) =>
@@ -62,14 +70,20 @@ export async function getStaticPaths({ locales }) {
     .flat();
   return {
     paths: allPathsWithLocales,
-    fallback: 'blocking'
+    fallback: "blocking"
   };
 }
 
-export async function getStaticProps({ params, locale }) {
+export async function getStaticProps({
+  params,
+  locale
+}: {
+  params: IParams;
+  locale: string;
+}) {
   const { relatedProducts, ...product } = await getProductAndRelatedProducts(
     locale,
-    params.slug.replace(/\/$/, '').split('/').pop()
+    params.slug.replace(/\/$/, "").split("/").pop() as string
   );
   return {
     props: {

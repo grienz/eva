@@ -1,10 +1,10 @@
-import { useRouter } from 'next/router';
-import { NextSeo } from 'next-seo';
+import { useRouter } from "next/router";
+import { NextSeo } from "next-seo";
 
-import { Footer } from '@/components/Footer';
-import { Header } from '@/components/Header';
+import { Footer } from "@/components/Footer";
+import { Header } from "@/components/Header";
 
-import ScrollTopButton from './ScrollTopButton';
+import ScrollTopButton from "./ScrollTopButton";
 
 type ContainerProps = {
   title?: string;
@@ -14,19 +14,19 @@ type ContainerProps = {
   date?: string;
   children: React.ReactNode;
 };
-
+// eslint-disable-next-line import/prefer-default-export
 export function Container(props: ContainerProps) {
   const router = useRouter();
   const openGraph = {
-    title: props.title ?? '',
-    url: `http://localhost:3000${router.asPath}` ?? 'http://localhost:3000',
-    type: props.type ?? 'page',
-    image: props.ogImage ?? '/og.png',
-    description: props.description ?? '',
+    title: props.title ?? "",
+    url: `http://localhost:3000${router.asPath}` ?? "http://localhost:3000",
+    type: props.type ?? "page",
+    image: props.ogImage ?? "/og.png",
+    description: props.description ?? "",
     images: [
       {
-        url: props.ogImage ?? '/og.png',
-        alt: props.title ?? ''
+        url: props.ogImage ?? "/og.png",
+        alt: props.title ?? ""
       }
     ]
   };

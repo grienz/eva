@@ -1,14 +1,15 @@
-import { useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 
-import { LocaleSwitch } from '@/components/LocaleSwitch';
-import { NavItemHeader } from '@/components/NavItemHeader';
-import { ThemeSwitch } from '@/components/ThemeSwitch';
-import { globalConfig } from '@/config/global.config';
+import { LocaleSwitch } from "@/components/LocaleSwitch";
+import { NavItemHeader } from "@/components/NavItemHeader";
+import { ThemeSwitch } from "@/components/ThemeSwitch";
+import { globalConfig } from "@/utils/global.config";
 
+// eslint-disable-next-line import/prefer-default-export
 export function Header() {
   const [mounted, setMounted] = useState(false);
-  const t = useTranslations('Navigation');
+  const t = useTranslations("Navigation");
   useEffect(() => setMounted(true), []);
 
   return (
@@ -27,7 +28,7 @@ export function Header() {
           ))}
         </div>
         {mounted && (
-          <div className="flex items-center align-middlle">
+          <div className="align-middlle flex items-center">
             <LocaleSwitch />
             <ThemeSwitch />
           </div>

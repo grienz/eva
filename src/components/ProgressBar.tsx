@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-implied-eval */
-import { useRouter } from 'next/router';
-import NProgress from 'nprogress';
-import { useEffect } from 'react';
+import { useRouter } from "next/router";
+import NProgress from "nprogress";
+import { useEffect } from "react";
 
-export default function ProgressBar() {
+export default function ProgressBar(): JSX.Element {
   const router = useRouter();
 
   useEffect(() => {
@@ -18,13 +18,13 @@ export default function ProgressBar() {
       NProgress.done();
     };
 
-    router.events.on('routeChangeStart', start);
-    router.events.on('routeChangeComplete', done);
-    router.events.on('routeChangeError', done);
+    router.events.on("routeChangeStart", start);
+    router.events.on("routeChangeComplete", done);
+    router.events.on("routeChangeError", done);
     return () => {
-      router.events.off('routeChangeStart', start);
-      router.events.off('routeChangeComplete', done);
-      router.events.off('routeChangeError', done);
+      router.events.off("routeChangeStart", start);
+      router.events.off("routeChangeComplete", done);
+      router.events.off("routeChangeError", done);
     };
   }, []);
   return <></>;

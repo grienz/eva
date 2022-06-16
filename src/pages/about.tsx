@@ -1,11 +1,11 @@
-import { Container } from '@/components/Container';
-import { PageTop } from '@/components/PageTop';
-import { getPageContent } from '@/lib/api';
+import { Container } from "@/components/Container";
+import { PageTop } from "@/components/PageTop";
+import { getPageContent } from "@/utils/api";
 
-export default function About({ pageData }) {
+export default function About({ pageData }: Props) {
   return (
     <Container title={pageData.pageTitle}>
-      <div className="flex flex-col justify-center items-start max-w-2xl border-gray-200 dark:border-gray-700 mx-auto pb-16">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
         {pageData && (
           <PageTop
             title={pageData.pageTitle}
@@ -18,8 +18,11 @@ export default function About({ pageData }) {
   );
 }
 
-export async function getStaticProps({ locale }) {
-  const pageData = await getPageContent(locale, 'about');
+type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
+type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  const pageData = await getPageContent(locale, "about");
   return {
     props: {
       pageData,

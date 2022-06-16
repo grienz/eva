@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from "react";
 
 interface Options {
   enterDelay?: number;
@@ -36,13 +36,17 @@ export const useDelayedRender = (
     if (prevActive.current) {
       // Mount immediately
       mounted.current = true;
-      if (unmountTimer.current) clearTimeout(unmountTimer.current);
+      if (unmountTimer.current) {
+        clearTimeout(unmountTimer.current);
+      }
 
       if (enterDelay <= 0) {
         // Render immediately
         rendered.current = true;
       } else {
-        if (renderTimer.current) return;
+        if (renderTimer.current) {
+          return;
+        }
 
         // Render after a delay
         renderTimer.current = setTimeout(() => {
@@ -58,7 +62,9 @@ export const useDelayedRender = (
       if (exitDelay <= 0) {
         mounted.current = false;
       } else {
-        if (unmountTimer.current) return;
+        if (unmountTimer.current) {
+          return;
+        }
 
         // Unmount after a delay
         unmountTimer.current = setTimeout(() => {
