@@ -25,6 +25,18 @@
     "models": "Models",
     "tags": "Types"
   },
+  "Contact": {
+    "contact": "Contact us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send",
+    "name_input": "Enter your name.",
+    "message_input": "Insert your message here...",
+    "email_input": "Enter your mail address.",
+    "thank_you": "Thank you for your message. We will contact you as soon as possible.",
+    "error": "Error sending message. Please try again later."
+  },
   "404": {
     "title": "Something went wrong",
     "body": "Page not found",

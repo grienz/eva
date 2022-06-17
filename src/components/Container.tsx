@@ -35,7 +35,7 @@ export function Container(props: ContainerProps) {
       <NextSeo openGraph={openGraph} />
       <main
         id="skip"
-        className="mx-auto flex min-w-fit max-w-2xl flex-col  justify-center bg-white px-6 text-lg text-slate-500 dark:bg-slate-900 dark:text-slate-400 md:px-8"
+        className="mx-auto flex min-w-fit max-w-2xl flex-col justify-center bg-white px-6 text-lg text-slate-500 dark:bg-slate-900 dark:text-slate-400 md:px-8"
       >
         <Header />
         {props.children}

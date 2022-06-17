@@ -13,7 +13,7 @@ export function Header() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <nav className="sticky top-0 z-50 rounded-b-lg border-x-1 border-b-2 border-teal-600 bg-slate-100 bg-opacity-40 px-2 drop-shadow-md backdrop-blur-lg backdrop-opacity-60 dark:bg-slate-900 dark:bg-opacity-40">
+    <nav className="sticky top-0 z-50 rounded-b-lg border-x-1 border-b-1 border-teal-600 bg-slate-100 bg-opacity-40 px-2 drop-shadow-md backdrop-blur-lg backdrop-opacity-60 dark:bg-slate-900 dark:bg-opacity-40">
       <a href="#skip" className="skip-nav">
         &gt;
       </a>

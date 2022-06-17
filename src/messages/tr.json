@@ -25,6 +25,18 @@
     "models": "Modeller",
     "tags": "Çeşitler"
   },
+  "Contact": {
+    "contact": "Bize ulaşın",
+    "name": "İsim",
+    "email": "E-posta",
+    "message": "Mesaj",
+    "send": "Gönder",
+    "name_input": "İsminizi giriniz.",
+    "message_input": "Mesajınızı giriniz...",
+    "email_input": "E-posta adresinizi giriniz.",
+    "thank_you": "En kısa zamanda size dönüş yapacağız.",
+    "error": "Hata oluştu. Lütfen tekrar deneyiniz."
+  },
   "404": {
     "title": "Bir hata oluştu",
     "body": "Sayfa bulunamadı",
