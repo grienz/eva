@@ -32,7 +32,7 @@ const ScrollTopButton = (): JSX.Element => {
     <motion.div animate={animation}>
       <FaArrowCircleUp
         onClick={scrollTop}
-        className="fixed bottom-3 right-1 h-10 w-10 text-gray-800 hover:cursor-pointer hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:right-10 md:bottom-10"
+        className="fixed bottom-3 right-1 h-6 w-6 text-gray-800 hover:cursor-pointer hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:right-10 md:bottom-10"
       />
     </motion.div>
   );

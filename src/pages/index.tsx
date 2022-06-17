@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { Container } from "@/components/Container";
-import { MoreproductsControls } from "@/components/MoreProductsControls";
+import { MoreProductsControls } from "@/components/MoreProductsControls";
 import { PageTop } from "@/components/PageTop";
 import { ProductsGrid } from "@/components/ProductsGrid";
 import { SectionSeparator } from "@/components/SectionSeparator";
@@ -34,7 +34,7 @@ export default function Index({ pageData, featuredProducts, total }: Props) {
         {featuredProducts?.length > 0 && (
           <ProductsGrid products={featuredProducts} />
         )}
-        <MoreproductsControls isDisabled={total < 6} />
+        <MoreProductsControls isDisabled={total < 6} />
       </div>
     </Container>
   );

@@ -31,7 +31,7 @@
     "button": "Anasayfaya dön"
   },
   "500": {
-    "title": "500",
+    "title": "Sunucuda hata oluştu",
     "body": "Sayfa bulunamadı",
     "button": "Anasayfaya dön"
   }

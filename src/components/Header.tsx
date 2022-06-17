@@ -13,9 +13,9 @@ export function Header() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <nav className="pb-8 pt-4 sm:pb-16">
+    <nav className="sticky top-0 z-50 rounded-b-lg border-x-1 border-b-2 border-teal-600 bg-slate-100 bg-opacity-40 px-2 drop-shadow-md backdrop-blur-lg backdrop-opacity-60 dark:bg-slate-900 dark:bg-opacity-40">
       <a href="#skip" className="skip-nav">
-        Skip to content
+        &gt;
       </a>
       <div className="flex justify-between">
         <div className="flex items-center">
@@ -24,11 +24,12 @@ export function Header() {
               href={link.href}
               text={index === 0 ? `${globalConfig.copyright}` : t(link.title)}
               key={link.title}
+              icon={link.icon}
             />
           ))}
         </div>
         {mounted && (
-          <div className="align-middlle flex items-center">
+          <div className="flex items-center align-middle">
             <LocaleSwitch />
             <ThemeSwitch />
           </div>

@@ -13,7 +13,7 @@ type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
 
 export default function GetAllModelsAndTags({ models, tags }: Props) {
   const t = useTranslations("Titles");
-  const sortedAutors = models.sort(
+  const sortedModels = models.sort(
     (a, b) => b.relatedProductsCount - a.relatedProductsCount
   );
   const sortedTags = tags.sort(
@@ -29,9 +29,9 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
             </h1>
           </div>
           <div className="flex max-w-lg flex-wrap">
-            {sortedAutors &&
-              sortedAutors.length > 0 &&
-              sortedAutors.map((model) => (
+            {sortedModels &&
+              sortedModels.length > 0 &&
+              sortedModels.map((model) => (
                 <div key={model.modelSlug} className="mt-2 mb-2 mr-5">
                   <Link href={`/model/${model.modelSlug}`}>
                     <a className="mr-3 text-base font-medium text-teal-600 transition-all delay-100 hover:text-teal-800 dark:hover:text-teal-400">

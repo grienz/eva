@@ -38,7 +38,7 @@ export function ProductCard({
           <a>{truncate(title)}</a>
         </Link>
       </h4>
-      <div className="flex flex-row justify-end  text-sm">
+      <div className="flex flex-row justify-end text-sm">
         {<Tags tags={tags} />}
       </div>
       <div className="flex flex-row ">

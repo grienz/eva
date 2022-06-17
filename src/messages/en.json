@@ -31,8 +31,8 @@
     "button": "Back to home"
   },
   "500": {
-    "title": "500",
-    "body": "Internal server error",
+    "title": "Internal server error",
+    "body": "Page not found",
     "button": "Back to home"
   }
 }

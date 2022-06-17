@@ -6,7 +6,7 @@ export default function FourZeroFour() {
   const t = useTranslations("404");
 
   return (
-    <div className="flex flex-col items-center justify-center mt-40 md:flex-row md:space-x-6">
+    <div className="mt-40 flex flex-col items-center justify-center md:flex-row md:space-x-6">
       <div className="space-x-2 pt-6 pb-8 md:space-y-5">
         <h1 className="md:leading-14 text-6xl font-extrabold tracking-tight text-gray-900 dark:text-gray-100 md:border-r-2 md:px-6 md:text-8xl">
           404
@@ -15,7 +15,7 @@ export default function FourZeroFour() {
       <div>
         <RiAlarmWarningFill
           size={60}
-          className="text-gray-600 dark:text-yellow-300"
+          className="animate-ping text-gray-600 dark:text-yellow-300"
         />
       </div>
       <div className="max-w-md">

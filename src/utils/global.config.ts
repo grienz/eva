@@ -1,3 +1,5 @@
+import { about, category, home, mail, product } from "@/components/Icons";
+
 export const globalConfig = {
   pagination: {
     pageSize: 6,
@@ -15,11 +17,11 @@ export const globalConfig = {
     defaultQuality: 80
   },
   menuLinks: [
-    { href: "/", title: "home" },
-    { href: "/product/list/1", title: "product" },
-    { href: "/categories", title: "categories" },
-    { href: "/about", title: "about" },
-    { href: "/contact", title: "contact" }
+    { href: "/", title: "home", icon: home },
+    { href: "/product/list/1", title: "product", icon: product },
+    { href: "/categories", title: "categories", icon: category },
+    { href: "/about", title: "about", icon: about },
+    { href: "/contact", title: "contact", icon: mail }
   ],
   siteUrl: "http://localhost:3000",
   instagramLink: "https://www.instagram.com/evasmartshower/",

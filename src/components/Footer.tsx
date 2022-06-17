@@ -44,9 +44,9 @@ export function Footer() {
           <ExternalLink href={globalConfig.mail}>{mail}</ExternalLink>
         </div>
       </div>
-      <div className="mt-8 flex justify-center text-sm">
+      <div className="mt-4 flex justify-center text-sm">
         <a
-          className="items-center pl-4 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
+          className="items-center pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
           target="_blank"
           rel="noopener noreferrer"
           href={globalConfig.githubLink}
@@ -55,7 +55,7 @@ export function Footer() {
           {github}
         </a>
         <a
-          className="items-center pl-4 pt-1 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
+          className="items-center  pl-2 pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
           rel="noopener noreferrer"
           title={globalConfig.copyright}
         >

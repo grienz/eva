@@ -5,7 +5,7 @@ import { getPageContent } from "@/utils/api";
 export default function About({ pageData }: Props) {
   return (
     <Container title={pageData.pageTitle}>
-      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
+      <div className="mx-auto mb-40 flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
         {pageData && (
           <PageTop
             title={pageData.pageTitle}

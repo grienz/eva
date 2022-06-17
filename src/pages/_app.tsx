@@ -33,8 +33,8 @@ function App({ Component, pageProps }: AppProps) {
         {" "}
         <ThemeProvider attribute="class">
           <DefaultSeo {...SEO} />
-          <Component {...pageProps} />
           <Analytics />
+          <Component {...pageProps} />
         </ThemeProvider>
         <ProgressBar />
       </NextIntlProvider>

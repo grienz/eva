@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 // eslint-disable-next-line import/prefer-default-export
-export function MoreproductsControls({ isDisabled }: { isDisabled: boolean }) {
+export function MoreProductsControls({ isDisabled }: { isDisabled: boolean }) {
   const t = useTranslations("Product");
   return (
     <div className="flex w-full flex-row flex-nowrap  place-items-center justify-center">
