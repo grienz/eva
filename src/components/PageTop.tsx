@@ -31,7 +31,7 @@ export function PageTop({
           </h2>
         )}
         <ProductBody text={text} />
-        <div className="itms-center mb-2 flex align-middle">
+        <div className="mb-2 flex items-center align-middle">
           {socials.length > 0 && <Socials socials={socials} />}
         </div>
       </div>

@@ -5,7 +5,6 @@ import type { PortableText as PortableTextType } from "@/typings/schema-types";
 import { globalConfig } from "@/utils/global.config";
 
 const ptComponents = {
-  // TODO:  console log value here and determine its type
   types: {
     image: ({ value }: { value: any }) => {
       // eslint-disable-next-line no-underscore-dangle

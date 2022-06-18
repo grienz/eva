@@ -50,9 +50,6 @@ export function Carousel({ products }: { products: ProductBase[] }) {
 
   return (
     <div className="carousel my-12 mx-auto">
-      <h2 className="mb-12 text-4xl font-medium leading-8 text-slate-700">
-        Öne Çıkan Ürünler
-      </h2>
       <div className="relative overflow-hidden">
         <div className="top left absolute flex h-full w-full justify-between">
           <button
@@ -62,7 +59,7 @@ export function Carousel({ products }: { products: ProductBase[] }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="-ml-5 h-12 w-20"
+              className="h-12 w-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -83,7 +80,7 @@ export function Carousel({ products }: { products: ProductBase[] }) {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="-ml-5 h-12 w-20"
+              className="h-12 w-10"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -100,29 +97,29 @@ export function Carousel({ products }: { products: ProductBase[] }) {
         </div>
         <div
           ref={carousel}
-          className="carousel-container relative z-0 flex touch-pan-x snap-x snap-mandatory gap-1 overflow-hidden scroll-smooth"
+          className="carousel-container relative z-0 flex w-full touch-pan-x snap-x snap-mandatory gap-1 overflow-hidden scroll-smooth rounded-lg"
         >
           {products.map((product, index) => {
             return (
               <div
                 key={index}
-                className="carousel-item relative h-64 w-32 snap-start text-center"
+                className="carousel-item relative min-w-full snap-start text-center"
               >
                 <a
-                  href={product.productSlug}
-                  className="z-0 block aspect-square h-full w-full bg-cover bg-left-top bg-no-repeat bg-origin-padding"
+                  href={`/product/${product.productSlug}`}
+                  className="z-0 block aspect-square w-full bg-cover bg-left-top bg-no-repeat bg-origin-padding"
                   style={{
                     backgroundImage: `url(${product.productImageUrl || ""})`
                   }}
                 >
                   <img
-                    src={product.productSlug || ""}
+                    src={product.productImageUrl || ""}
                     alt={product.productTitle}
                     className="hidden aspect-square w-full"
                   />
                 </a>
                 <a
-                  href={product.productSlug}
+                  href={`/product/${product.productSlug}`}
                   className="absolute top-0 left-0 z-10 block aspect-square h-full w-full bg-blue-800/75 opacity-0 transition-opacity duration-300 hover:opacity-100"
                 >
                   <h3 className="mx-auto py-6 px-3 text-xl text-white">

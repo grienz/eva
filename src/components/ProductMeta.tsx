@@ -12,7 +12,6 @@ export type ProductMetaProps = {
 
 export function ProductMeta({ model, date }: ProductMetaProps) {
   const intl = useIntl();
-  // eslint-disable-next-line unused-imports/no-unused-vars
   return (
     <>
       <div className="relative">

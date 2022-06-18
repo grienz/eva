@@ -29,7 +29,6 @@ export default function Index({ pageData, featuredProducts, total }: Props) {
             text={pageData.pageText}
           />
         )}
-        <div className="relative mb-4 w-full"></div>
         <SectionSeparator />
         <Subtitle>{t("featured_products")}</Subtitle>
         {featuredProducts?.length > 0 && (
