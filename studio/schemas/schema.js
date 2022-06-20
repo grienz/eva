@@ -221,7 +221,7 @@ const productSchema = {
     },
     {
       name: 'tags',
-      title: 'Ürün için özellik ekleyiniz',
+      title: 'Ürün için özellik ekleyiniz "4 taneden fazla ekelemeyiniz."',
       validation: (Rule) => Rule.required(),
       type: 'array',
       of: [
