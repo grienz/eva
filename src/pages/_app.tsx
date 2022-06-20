@@ -6,6 +6,7 @@ import "@fontsource/ibm-plex-sans/500.css";
 import "@fontsource/ibm-plex-sans/600.css";
 import "@fontsource/ibm-plex-sans/700.css";
 
+import { usePanelbear } from "@panelbear/panelbear-nextjs";
 import type { AppProps } from "next/app";
 import { NextIntlProvider } from "next-intl";
 import { DefaultSeo } from "next-seo";
@@ -16,6 +17,9 @@ import ProgressBar from "@/components/ProgressBar";
 import SEO from "@/utils/next-seo.config";
 
 function App({ Component, pageProps }: AppProps) {
+  usePanelbear(process.env.NEXT_PUBLIC_PANELBEAR_SITE_ID, {
+    debug: false
+  });
   return (
     <>
       <NextIntlProvider

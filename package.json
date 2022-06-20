@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "@fontsource/ibm-plex-sans": "^4.5.11",
+    "@panelbear/panelbear-nextjs": "^1.0.3",
     "@portabletext/react": "^1.0.6",
     "@sanity/client": "^3.3.2",
     "@sanity/image-url": "^1.0.1",

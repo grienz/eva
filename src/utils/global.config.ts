@@ -23,10 +23,10 @@ export const globalConfig = {
     { href: "/about", title: "about", icon: about },
     { href: "/contact", title: "contact", icon: mail }
   ],
-  siteUrl: "http://localhost:3000",
+  siteUrl: "https://evasmartshower.vercel.app",
   instagramLink: "https://www.instagram.com/evasmartshower/",
   telegramLink: "https://t.me/evasmartshower",
-  facebookLink: "https://www.facebook.com/evasmartshower/",
+  facebookLink: "https://www.facebook.com/",
   githubLink: "https://github.com/grienz/evasmartshower",
   youtubeLink: "https://www.youtube.com/channel",
   mail: "mailto:evasmartshower@gmail.com",

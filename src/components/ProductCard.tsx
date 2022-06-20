@@ -25,7 +25,7 @@ export function ProductCard({
   slug
 }: ProductCardProps) {
   return (
-    <div className="my-4 md:my-0">
+    <div className="my-4 rounded-md border-1 border-teal-600 px-1 py-1 md:my-0">
       <SanityImage
         slug={slug}
         alt={title}
