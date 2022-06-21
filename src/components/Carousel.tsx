@@ -112,6 +112,7 @@ export function Carousel({ products }: { products: ProductBase[] }) {
                     backgroundImage: `url(${product.productImageUrl || ""})`
                   }}
                 >
+                  {/* eslint-disable-next-line */}
                   <img
                     src={product.productImageUrl || ""}
                     alt={product.productTitle}

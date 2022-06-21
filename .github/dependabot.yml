@@ -5,7 +5,12 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/" # Location of package manifests
+  - package-ecosystem: npm
+    open-pull-requests-limit: 10
+    directory: /action
+    commit-message:
+      prefix: build
+      prefix-development: chore
+      include: scope
     schedule:
-      interval: "daily"
+      interval: daily

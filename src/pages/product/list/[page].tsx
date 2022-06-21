@@ -11,7 +11,7 @@ import {
   getPaginatedProducts,
   getTotalProductsNumber
 } from "@/utils/api";
-import { globalConfig } from "@/utils/global.config";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 interface IParams extends ParsedUrlQuery {
   page: string;
@@ -56,7 +56,7 @@ export default function ProductIndexPage({
 export async function getStaticPaths({ locales }: { locales: string[] }) {
   const totalProducts = await getTotalProductsNumber();
   const totalPages = Math.ceil(
-    totalProducts / globalConfig.pagination.pageSize
+    totalProducts / GLOBAL_CONFIG.pagination.pageSize
   );
   const allPathsWithLocales = Array.from(
     { length: totalPages - 1 },
@@ -89,7 +89,7 @@ export async function getStaticProps({
   const pageData = await getPageContent(locale, "/");
   const totalProducts = await getTotalProductsNumber();
   const totalPages = Math.ceil(
-    totalProducts / globalConfig.pagination.pageSize
+    totalProducts / GLOBAL_CONFIG.pagination.pageSize
   );
   return {
     props: {

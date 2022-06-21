@@ -10,7 +10,7 @@ import type {
   Slug,
   Tag
 } from "@/typings/schema-types";
-import { globalConfig } from "./global.config";
+import { GLOBAL_CONFIG } from "./global.config";
 import { getSkipValue } from "./contentUtils";
 import { getSanityClient } from "./sanity";
 
@@ -37,7 +37,7 @@ export async function getFeaturedProducts(
   const data = await client.fetch(getFeaturedProductsQuery, {
     locale,
     skip: 0,
-    limit: globalConfig.pagination.pageSize
+    limit: GLOBAL_CONFIG.pagination.pageSize
   });
   return data;
 }
@@ -84,7 +84,7 @@ export async function getTagAndRelatedProducts(
     locale,
     slug,
     skip: 0,
-    limit: globalConfig.pagination.allProductsSize
+    limit: GLOBAL_CONFIG.pagination.allProductsSize
   });
   return data;
 }
@@ -102,7 +102,7 @@ export async function getModelAndRelatedProducts(
     locale,
     slug,
     skip: 0,
-    limit: globalConfig.pagination.allProductsSize
+    limit: GLOBAL_CONFIG.pagination.allProductsSize
   });
   return data;
 }
@@ -120,7 +120,7 @@ export async function getProductAndRelatedProducts(
     locale,
     slug,
     skip: 0,
-    limit: globalConfig.pagination.moreProductsSize
+    limit: GLOBAL_CONFIG.pagination.moreProductsSize
   });
   return data;
 }
@@ -132,7 +132,7 @@ export async function getPaginatedProducts(
   const data = await client.fetch(getPaginatedProductsQuery, {
     locale,
     skip: getSkipValue(page),
-    limit: globalConfig.pagination.pageSize + getSkipValue(page)
+    limit: GLOBAL_CONFIG.pagination.pageSize + getSkipValue(page)
   });
   return data;
 }

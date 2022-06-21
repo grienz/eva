@@ -36,5 +36,6 @@ yarn-error.log*
 *.tsbuildinfo
 
 
-# Contentlayer
-.contentlayer
+# sanity
+/public/studio/
+

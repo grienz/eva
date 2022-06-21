@@ -3,7 +3,7 @@ import { useTranslations } from "next-intl";
 import type { SubmitHandler } from "react-hook-form";
 import { useForm } from "react-hook-form";
 
-import { globalConfig } from "../utils/global.config";
+import { GLOBAL_CONFIG } from "../utils/global.config";
 
 interface Inputs {
   email: string;
@@ -18,7 +18,7 @@ const Contact: React.FC = () => {
   const router = useRouter();
   const onSubmit: SubmitHandler<Inputs> = ({ message, email, name }) => {
     router.push(
-      `mailto:${globalConfig.mail}?body=${encodeURIComponent(
+      `mailto:${GLOBAL_CONFIG.mail}?body=${encodeURIComponent(
         `${name && name} (${email}):\n\n${message}`
       )}`
     );

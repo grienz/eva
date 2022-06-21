@@ -10,7 +10,7 @@ import {
 } from "@/components/Icons";
 import { NavItemFooter } from "@/components/NavItemFooter";
 import { SectionSeparator } from "@/components/SectionSeparator";
-import { globalConfig } from "@/utils/global.config";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 const copyrightYear = new Date().getFullYear();
 
@@ -23,7 +23,7 @@ export function Footer() {
       <SectionSeparator />
       <div className="flex justify-between">
         <div className="inline-flex items-center">
-          {globalConfig.menuLinks.map((link, index) => (
+          {GLOBAL_CONFIG.menuLinks.map((link, index) => (
             <NavItemFooter
               href={link.href}
               text={index === 0 ? "//" : t(link.title)}
@@ -32,16 +32,16 @@ export function Footer() {
           ))}
         </div>
         <div className="inline-flex items-center">
-          <ExternalLink href={globalConfig.telegramLink}>
+          <ExternalLink href={GLOBAL_CONFIG.telegramLink}>
             {telegram}
           </ExternalLink>
-          <ExternalLink href={globalConfig.facebookLink}>
+          <ExternalLink href={GLOBAL_CONFIG.facebookLink}>
             {facebook}
           </ExternalLink>
-          <ExternalLink href={globalConfig.instagramLink}>
+          <ExternalLink href={GLOBAL_CONFIG.instagramLink}>
             {instagram}
           </ExternalLink>
-          <ExternalLink href={globalConfig.mail}>{mail}</ExternalLink>
+          <ExternalLink href={GLOBAL_CONFIG.mail}>{mail}</ExternalLink>
         </div>
       </div>
       <div className="mt-4 flex justify-center text-sm">
@@ -49,7 +49,7 @@ export function Footer() {
           className="items-center pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
           target="_blank"
           rel="noopener noreferrer"
-          href={globalConfig.githubLink}
+          href={GLOBAL_CONFIG.githubLink}
           title={t("sourcecode")}
         >
           {github}
@@ -57,9 +57,9 @@ export function Footer() {
         <a
           className="items-center  pl-2 pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
           rel="noopener noreferrer"
-          title={globalConfig.copyright}
+          title={GLOBAL_CONFIG.copyright}
         >
-          {t("copyright")} © {copyrightYear} {globalConfig.copyright}
+          {t("copyright")} © {copyrightYear} {GLOBAL_CONFIG.copyright}
         </a>
       </div>
     </footer>

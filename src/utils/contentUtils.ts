@@ -1,4 +1,4 @@
-import { globalConfig } from "./global.config";
+import { GLOBAL_CONFIG } from "./global.config";
 
 export const shimmer = (w: number, h: number) => `
 <svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -22,16 +22,16 @@ export const toBase64 = (str: string) =>
 export function getSkipValue(page: number) {
   const skipMultiplier = page === 1 ? 0 : page - 1;
   return skipMultiplier > 0
-    ? globalConfig.pagination.pageSize * skipMultiplier
+    ? GLOBAL_CONFIG.pagination.pageSize * skipMultiplier
     : 0;
 }
 
 export function truncate(str: string) {
   let i;
   const bits = str.split("");
-  if (bits.length > globalConfig.trimmedHeaderLength) {
+  if (bits.length > GLOBAL_CONFIG.trimmedHeaderLength) {
     for (i = bits.length - 1; i > -1; i -= 1) {
-      if (i > globalConfig.trimmedHeaderLength) {
+      if (i > GLOBAL_CONFIG.trimmedHeaderLength) {
         bits.length = i;
       } else if (bits[i] === " ") {
         bits.length = i;

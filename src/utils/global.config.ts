@@ -1,6 +1,4 @@
-import { about, category, home, mail, product } from "@/components/Icons";
-
-export const globalConfig = {
+export const GLOBAL_CONFIG = {
   pagination: {
     pageSize: 6,
     moreProductsSize: 6,
@@ -17,11 +15,11 @@ export const globalConfig = {
     defaultQuality: 80
   },
   menuLinks: [
-    { href: "/", title: "home", icon: home },
-    { href: "/product/list/1", title: "product", icon: product },
-    { href: "/categories", title: "categories", icon: category },
-    { href: "/about", title: "about", icon: about },
-    { href: "/contact", title: "contact", icon: mail }
+    { href: "/", title: "home" },
+    { href: "/product/list/1", title: "product" },
+    { href: "/categories", title: "categories" },
+    { href: "/about", title: "about" },
+    { href: "/contact", title: "contact" }
   ],
   siteUrl: "https://evasmartshower.vercel.app",
   instagramLink: "https://www.instagram.com/evasmartshower/",
@@ -38,4 +36,14 @@ export const sanityConfig = {
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
   apiVersion: "2021-10-21"
+};
+
+export const SEO = {
+  openGraph: {
+    titleTemplate: "EVA | %s",
+    description: "Banyonuz daha değerli.",
+    type: "website",
+    url: "https://evasmartshower.vercel.app/",
+    site_name: "Eva Smart Shower"
+  }
 };

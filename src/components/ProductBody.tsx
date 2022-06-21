@@ -2,7 +2,7 @@ import { PortableText } from "@portabletext/react";
 
 import { SanityImage } from "@/components/SanityImage";
 import type { PortableText as PortableTextType } from "@/typings/schema-types";
-import { globalConfig } from "@/utils/global.config";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 const ptComponents = {
   types: {
@@ -16,8 +16,8 @@ const ptComponents = {
           <SanityImage
             alt={value.alt ?? ""}
             url={value}
-            width={globalConfig.images.defaultProductImageWidth}
-            height={globalConfig.images.defaultProductImageHeight}
+            width={GLOBAL_CONFIG.images.defaultProductImageWidth}
+            height={GLOBAL_CONFIG.images.defaultProductImageHeight}
           />
         </div>
       );

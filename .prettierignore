@@ -9,3 +9,5 @@ studio
 yarn.lock
 tsconfig.tsbuildinfo
 out
+commitlint.config.js
+.vscode

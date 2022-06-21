@@ -5,7 +5,7 @@ import { SanityImage } from "@/components/SanityImage";
 import { Tags } from "@/components/Tags";
 import type { ModelBase, TagBase } from "@/typings/schema-types";
 import { truncate } from "@/utils/contentUtils";
-import { globalConfig } from "@/utils/global.config";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 export type ProductCardProps = {
   title: string;
@@ -30,8 +30,8 @@ export function ProductCard({
         slug={slug}
         alt={title}
         url={previewImage}
-        width={globalConfig.images.defaultProductPreviewImageWidth}
-        height={globalConfig.images.defaultProductImagePreviewHeight}
+        width={GLOBAL_CONFIG.images.defaultProductPreviewImageWidth}
+        height={GLOBAL_CONFIG.images.defaultProductImagePreviewHeight}
       />
       <h4 className="mt-4 w-full text-lg  font-medium text-gray-800  transition-all delay-100 hover:text-teal-600  dark:text-gray-200 dark:hover:text-teal-400">
         <Link href={`/product/${slug}`}>

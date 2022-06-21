@@ -3,19 +3,17 @@
   "project": {
     "name": "EVA",
     "basePath": "/studio"
-
   },
   "api": {
-    "projectId": "5zwlhggt",
-    "dataset": "production"
+    "projectId": "PLACEHOLDER",
+    "dataset": "PLACEHOLDER"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "media",
-    "vercel-deploy"
+    "media"
   ],
   "env": {
     "development": {
