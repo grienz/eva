@@ -36,11 +36,11 @@ function App({ Component, pageProps }: AppProps) {
       >
         {" "}
         <ThemeProvider attribute="class">
-          <DefaultSeo {...SEO} />
+          <ProgressBar />
           <Analytics />
+          <DefaultSeo {...SEO} />
           <Component {...pageProps} />
         </ThemeProvider>
-        <ProgressBar />
       </NextIntlProvider>
     </>
   );

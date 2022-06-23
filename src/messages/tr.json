@@ -6,7 +6,7 @@
     "next_page": "Sonraki sayfa"
   },
   "Navigation": {
-    "home": " Anasayfa",
+    "home": "Anasayfa",
     "product": "Ürünler",
     "categories": "Kategoriler",
     "about": "Hakkımızda",
@@ -20,6 +20,7 @@
     "model_related_articles": "Bu modelde olan ürünler, ",
     "tag_related_articles": "Aynı özellikte olan ürünler, ",
     "product_page": "Ürünler",
+    "product_list": "Liste",
     "featured_products": "Öne çıkan ürünler",
     "related_products": "Benzer ürünler",
     "models": "Modeller",

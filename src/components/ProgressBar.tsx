@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-implied-eval */
 import { useRouter } from "next/router";
 import NProgress from "nprogress";
 import { useEffect } from "react";

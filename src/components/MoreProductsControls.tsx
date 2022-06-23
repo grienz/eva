@@ -11,7 +11,7 @@ export function MoreProductsControls({ isDisabled }: { isDisabled: boolean }) {
         </p>
       ) : (
         <Link href={`/product/list/1`}>
-          <a className="group inline-flex items-center text-base  font-medium text-gray-800  transition-all delay-100 hover:text-teal-600 dark:text-gray-200 dark:hover:text-teal-400">
+          <a className="group inline-flex items-center text-base  font-medium text-gray-800  transition-all delay-100 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400">
             <span>{`${t("more_products")} →`}</span>
           </a>
         </Link>

@@ -29,8 +29,11 @@ export default function Product({ product, relatedProducts }: Props) {
       ogImage={product.productImageUrl}
       date={product.productDate}
       type="article"
+      description={product.productText}
+      tags={product.tags}
+      model={product.model}
     >
-      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-16">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-12">
         <div className="flex flex-col">
           <h1 className="text-3xl font-bold tracking-tight text-gray-800  dark:text-gray-200 md:text-5xl">
             {product.productTitle}

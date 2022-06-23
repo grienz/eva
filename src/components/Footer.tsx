@@ -14,19 +14,18 @@ import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 const copyrightYear = new Date().getFullYear();
 
-// eslint-disable-next-line import/prefer-default-export
 export function Footer() {
   const t = useTranslations("Navigation");
 
   return (
-    <footer className="mx-auto mb-8  flex w-full max-w-2xl flex-col">
+    <footer className="mx-auto mb-6  flex w-full max-w-2xl flex-col">
       <SectionSeparator />
       <div className="flex justify-between">
         <div className="inline-flex items-center">
           {GLOBAL_CONFIG.menuLinks.map((link, index) => (
             <NavItemFooter
               href={link.href}
-              text={index === 0 ? "//" : t(link.title)}
+              text={index === 0 ? `${GLOBAL_CONFIG.copyright}` : t(link.title)}
               key={link.title}
             />
           ))}
@@ -44,9 +43,9 @@ export function Footer() {
           <ExternalLink href={GLOBAL_CONFIG.mail}>{mail}</ExternalLink>
         </div>
       </div>
-      <div className="mt-4 flex justify-center text-sm">
+      <div className="my-4 flex items-center justify-center py-2 text-sm">
         <a
-          className="items-center pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
+          className="items-center text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
           target="_blank"
           rel="noopener noreferrer"
           href={GLOBAL_CONFIG.githubLink}
@@ -55,7 +54,7 @@ export function Footer() {
           {github}
         </a>
         <a
-          className="items-center  pl-2 pt-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-teal-800 dark:text-gray-50 dark:hover:text-teal-400 md:text-sm"
+          className="items-center  pl-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
           rel="noopener noreferrer"
           title={GLOBAL_CONFIG.copyright}
         >

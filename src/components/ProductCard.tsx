@@ -25,7 +25,7 @@ export function ProductCard({
   slug
 }: ProductCardProps) {
   return (
-    <div className="my-4 rounded-md border-1 border-teal-600 px-1 py-1 md:my-0">
+    <div className="m-1 rounded-md border-1 border-sky-600 p-1 dark:border-sky-400">
       <SanityImage
         slug={slug}
         alt={title}
@@ -33,7 +33,7 @@ export function ProductCard({
         width={GLOBAL_CONFIG.images.defaultProductPreviewImageWidth}
         height={GLOBAL_CONFIG.images.defaultProductImagePreviewHeight}
       />
-      <h4 className="mt-4 w-full text-lg  font-medium text-gray-800  transition-all delay-100 hover:text-teal-600  dark:text-gray-200 dark:hover:text-teal-400">
+      <h4 className="product-header-link m-3 w-full text-lg  font-medium">
         <Link href={`/product/${slug}`}>
           <a>{truncate(title)}</a>
         </Link>
@@ -41,7 +41,7 @@ export function ProductCard({
       <div className="flex flex-row justify-end text-sm">
         {<Tags tags={tags} />}
       </div>
-      <div className="flex flex-row ">
+      <div className="m-3 flex flex-row ">
         <ProductMeta date={date} model={model} />
       </div>
     </div>

@@ -1795,6 +1795,17 @@
     lodash "^4.17.15"
     oneline "^1.0.3"
 
+"@sanity/language-filter@^2.29.8":
+  version "2.29.8"
+  resolved "https://registry.npmjs.org/@sanity/language-filter/-/language-filter-2.29.8.tgz#0b1267d1916336f4a2f38104d29e408462751f03"
+  integrity sha512-dKWVxNA4GA33YsA7zl56xSXycfxYQeBbRl8sXJEN0sX80U0uMRafEZSRCaAq8N1ZsJ3IGintMRyaoRn66TDmvQ==
+  dependencies:
+    "@sanity/icons" "^1.2.6"
+    "@sanity/types" "2.29.5"
+    "@sanity/ui" "^0.37.9"
+    lodash "^4.17.15"
+    rxjs "^6.5.3"
+
 "@sanity/logos@^1.1.9":
   version "1.1.12"
   resolved "https://registry.npmjs.org/@sanity/logos/-/logos-1.1.12.tgz#3750eb3a18bf3e04289219d6885fd6e73124a8bd"

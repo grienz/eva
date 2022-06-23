@@ -32,7 +32,7 @@ export default function ProductIndexPage({
 
   return (
     <Container title={`${t("product_page")} ${page}/${totalPages}`}>
-      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-12">
         <PageTop
           title={`${pageData.pageTitle} (${page}/${totalPages})`}
           subtitle=""
@@ -64,7 +64,7 @@ export async function getStaticPaths({ locales }: { locales: string[] }) {
   )
     .map((page) =>
       locales.map((locale) => ({
-        params: { page: `/product/p/${page}` },
+        params: { page: `/product/list/${page}` },
         locale
       }))
     )

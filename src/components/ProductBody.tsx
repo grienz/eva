@@ -25,10 +25,9 @@ const ptComponents = {
   }
 };
 
-// eslint-disable-next-line import/prefer-default-export
 export function ProductBody({ text }: { text: PortableTextType }) {
   return (
-    <div className="prose-p:py-4 prose dark:prose-dark lg:prose-xl mx-auto w-full max-w-2xl  selection:bg-fuchsia-300 selection:text-fuchsia-900">
+    <div className="prose dark:prose-dark lg:prose-xl mx-auto w-full max-w-2xl">
       <PortableText value={text} components={ptComponents} />
     </div>
   );

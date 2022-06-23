@@ -6,12 +6,12 @@
     "next_page": "Next page"
   },
   "Navigation": {
-    "home": " Home",
+    "home": "Home",
     "product": "Products",
     "categories": "Categories",
     "about": "About",
     "contact": "Contact",
-    "copyright": "Copyright",
+    "copyright": "All rights reserved.",
     "sourcecode": "Source code",
     "flag": " 🇬🇧"
   },
@@ -19,7 +19,8 @@
     "categories": "Categories",
     "model_related_articles": "Related model products, ",
     "tag_related_articles": "Related properties products, ",
-    "product_page": "Product ",
+    "product_page": "Products",
+    "product_list": "List",
     "featured_products": "Featured products",
     "related_products": "Related products",
     "models": "Models",

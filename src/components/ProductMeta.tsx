@@ -19,7 +19,7 @@ export function ProductMeta({ model, date }: ProductMetaProps) {
       </div>
       <div className="flex-1 px-2">
         <Link href={`/model/${model.modelSlug}`}>
-          <a className="text-base font-bold transition-all  delay-100 hover:text-teal-600 dark:hover:text-teal-400">
+          <a className="text-base font-bold transition-all  delay-100 hover:text-sky-600 dark:hover:text-sky-400">
             {model.modelName}
           </a>
         </Link>

@@ -8,10 +8,10 @@ html {
 }
 
 ::selection {
-  background-color: #6ffcb8;
+  background-color: #53b9eb;
   color: #1e1919;
 }
-/* https://seek-oss.github.io/capsize/ */
+
 .capsize::before {
   display: table;
 }
@@ -20,16 +20,28 @@ html {
   display: table;
 }
 
-.autocomplete {
+/*.autocomplete {
   @apply block w-full rounded-md border border-gray-200 bg-white text-gray-800 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100;
-}
+}*/
 
 .nav-link {
-  @apply items-center transition-all delay-100  hover:text-teal-800 dark:hover:text-teal-400;
+  @apply items-center transition-all delay-100  hover:text-sky-600 dark:hover:text-sky-400;
 }
 
 .skip-nav {
   @apply absolute -left-1/4 -top-8 -translate-y-12 transform px-4 py-3 transition-transform duration-200 focus:top-4 focus:translate-y-3;
+}
+
+.gradient-header {
+  @apply bg-gradient-to-r from-sky-300 to-teal-800 bg-clip-text tracking-tight text-transparent dark:bg-gradient-to-l dark:from-teal-200 dark:to-sky-600;
+}
+
+.animated {
+  @apply transition-all delay-100;
+}
+
+.product-header-link {
+  @apply text-gray-800 transition-all  delay-100 hover:text-sky-600 dark:text-gray-200 dark:hover:text-sky-400;
 }
 
 #skip {
@@ -41,6 +53,86 @@ html {
     backdrop-filter: none;
     @apply bg-opacity-100;
   }
+}
+
+/*Product styling comes here */
+
+.prose pre {
+  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+}
+
+.prose blockquote {
+  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
+}
+
+.prose strong {
+  @apply font-semibold text-neutral-700 dark:text-neutral-300;
+}
+
+.prose em {
+  @apply text-neutral-700 dark:text-neutral-300;
+}
+.prose img {
+  @apply rounded-lg;
+}
+
+.prose h3 {
+  @apply py-4 text-3xl font-semibold text-sky-600 dark:text-sky-400;
+}
+
+.prose h4 {
+  @apply py-3 text-2xl font-medium text-sky-600 dark:text-sky-400;
+}
+
+.prose h5 {
+  @apply py-2 text-lg font-medium text-sky-600 dark:text-sky-400;
+}
+
+.prose p {
+  @apply py-2 text-stone-800 dark:text-stone-200;
+}
+
+.prose > p:first-of-type:first-letter {
+  @apply text-2xl font-semibold;
+}
+
+.prose > p:first-child {
+  @apply mt-4;
+}
+
+.prose > :last-child {
+  margin-bottom: 2em !important;
+}
+
+/* .prose p > :first-child {
+  @apply py-6;
+} */
+
+.prose > ul {
+  @apply py-6;
+}
+
+.prose > ul > li {
+  @apply list-inside list-disc py-2 pl-4 leading-8 text-stone-800 dark:text-stone-200;
+}
+
+.prose > ol {
+  @apply py-6;
+}
+
+.prose > ol > li {
+  @apply list-inside list-decimal py-2 pl-4 leading-8 text-stone-800 dark:text-stone-200;
+}
+
+/*Product old styling */
+
+/*.prose > :first-child {
+  margin-top: 1.25em !important;
+  margin-bottom: 1.25em !important;
+}
+
+.prose > :last-child {
+  margin-bottom: 2em !important;
 }
 
 .prose .anchor {
@@ -69,24 +161,4 @@ html {
 .prose *:hover > .anchor {
   @apply visible;
 }
-
-.prose pre {
-  @apply border border-gray-200 bg-gray-50 dark:border-gray-700 dark:bg-gray-900;
-}
-.prose strong {
-  @apply font-semibold text-neutral-700 dark:text-neutral-300;
-}
-
-.prose em {
-  @apply text-neutral-700 dark:text-neutral-300;
-}
-.prose img {
-  /* Don't apply styles to next/image */
-  @apply rounded-lg;
-}
-
-.prose > :first-child {
-  /* Override removing top margin, causing layout shift */
-  margin-top: 1.25em !important;
-  margin-bottom: 1.25em !important;
-}
+ */

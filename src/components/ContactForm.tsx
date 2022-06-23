@@ -25,10 +25,10 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="my-5 py-5">
+    <div className="m-5 flex flex-col p-5 ">
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col rounded-md border border-teal-600 p-4"
+        className="flex flex-col rounded-md border border-sky-600 p-4 dark:border-sky-400"
       >
         <label
           className="pl-2 font-medium text-black dark:text-white"
@@ -39,7 +39,7 @@ const Contact: React.FC = () => {
         <input
           type="email"
           id="contact-email"
-          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-teal-600 bg-transparent py-2 px-2 font-light"
+          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-sky-600 bg-transparent p-4 py-2 px-2 font-light dark:border-sky-400"
           autoComplete="off"
           placeholder={t("email_input")}
           {...register("email", { required: true })}
@@ -53,7 +53,7 @@ const Contact: React.FC = () => {
         <input
           type="text"
           id="contact-name"
-          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-teal-600 bg-transparent py-2 px-2 font-light "
+          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-sky-600 bg-transparent p-4 py-2 px-2 font-light dark:border-sky-400 "
           placeholder={t("name_input")}
           autoComplete="off"
           {...register("name", { required: false })}
@@ -67,13 +67,13 @@ const Contact: React.FC = () => {
         <textarea
           rows={3}
           id="contact-message"
-          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-teal-600 bg-transparent py-2 px-2 font-light"
+          className="input text-md mx-2 my-2 resize-none rounded-md border-1 border-sky-600 bg-transparent p-4 py-2 px-2 font-light dark:border-sky-400"
           placeholder={t("message_input")}
           {...register("message", { required: true })}
         />
         <input
           type="submit"
-          className="mx-2 my-2 flex flex-row justify-center rounded-md border-1  border-teal-600 py-2 px-2 font-medium text-black hover:animate-pulse dark:text-white dark:hover:bg-teal-800"
+          className="mx-2 my-2 flex flex-row justify-center rounded-md border-1  border-sky-600 p-4 py-2 px-2 font-medium text-black hover:animate-pulse hover:text-sky-600 dark:border-sky-400  dark:text-white dark:hover:text-sky-400 "
           value={t("send")}
         />
       </form>

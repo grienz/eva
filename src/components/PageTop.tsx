@@ -20,24 +20,24 @@ export function PageTop({
   text
 }: PageTopProps) {
   return (
-    <div className="flex flex-col-reverse items-start sm:flex-row">
-      <div className="flex flex-col pr-8">
-        <h1 className="mb-1 text-3xl font-bold tracking-tight text-gray-800  dark:text-gray-200 md:text-5xl">
+    <div className="flex flex-row items-start">
+      <div className="flex flex-col py-4 pr-8">
+        <h1 className="gradient-header my-1 pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
           {title}
         </h1>
         {subtitle && (
-          <h2 className="text-2xl font-medium tracking-tight text-gray-800  dark:text-gray-200 md:text-3xl">
+          <h2 className="my-1 pb-1 text-2xl  font-medium tracking-tight text-gray-800  dark:text-gray-200 md:text-3xl">
             {subtitle}
           </h2>
         )}
         <ProductBody text={text} />
-        <div className="mb-2 flex items-center align-middle">
+        <div className="my-1 items-center align-middle">
           {socials.length > 0 && <Socials socials={socials} />}
         </div>
       </div>
       {pictureUrl && (
         <div className="flex-col">
-          <div className="mb-4 h-32 w-32 md:mb-0 md:h-48 md:w-48">
+          <div className="lg:h-54 lg:w-54 h-32 w-32 bg-local md:h-48  md:w-48 xl:h-72 xl:w-72">
             <SanityImage
               alt={title}
               width={GLOBAL_CONFIG.images.defaultRoundImageWidthHeight}

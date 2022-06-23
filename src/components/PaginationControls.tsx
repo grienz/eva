@@ -20,7 +20,7 @@ export function PaginationControls({
         </p>
       ) : (
         <Link href={`/product/list/${Number(currentPage - 1)}`}>
-          <a className="group  inline-flex items-center text-base font-medium transition-all  delay-100 hover:text-teal-600 dark:hover:text-teal-400">
+          <a className="group  inline-flex items-center text-base font-medium transition-all  delay-100 hover:text-sky-600 dark:hover:text-sky-400">
             <span>{`← ${t("previous_page")}`}</span>
           </a>
         </Link>
@@ -31,7 +31,7 @@ export function PaginationControls({
         </p>
       ) : (
         <Link href={`/product/list/${Number(currentPage + 1)}`}>
-          <a className="group  inline-flex items-center font-medium  transition-all  delay-100 hover:text-teal-600 dark:hover:text-teal-400">
+          <a className="group  inline-flex items-center text-base font-medium transition-all  delay-100 hover:text-sky-600 dark:hover:text-sky-400">
             <span>{`${t("next_page")} →`}</span>
           </a>
         </Link>
