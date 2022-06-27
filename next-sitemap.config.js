@@ -3,6 +3,10 @@ module.exports = {
   siteUrl: process.env.NEXT_PUBLIC_SITE_URL,
   changefreq: "weekly",
   priority: 0.7,
+  generateRobotsTxt: true,
+  robotsTxtOptions: {
+    policies: [{ userAgent: "*", allow: "/" }]
+  },
   alternateRefs: [
     {
       href: process.env.NEXT_PUBLIC_SITE_URL,

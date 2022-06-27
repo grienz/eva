@@ -21,7 +21,7 @@ export const GLOBAL_CONFIG = {
     { href: "/about", title: "about" },
     { href: "/contact", title: "contact" }
   ],
-  siteUrl: "https://evasmartshower.vercel.app",
+  siteUrl: "http://localhost:3000",
   instagramLink: "https://www.instagram.com/evasmartshower/",
   telegramLink: "https://t.me/evasmartshower",
   facebookLink: "https://www.facebook.com/",
@@ -46,8 +46,9 @@ export const SEO = {
     titleTemplate: "EVA Smart Shower. Banyonuza değer katar.",
     description: "Duşakabin ve banyo sistemleri imalat, montaj hizmeti.",
     type: "website",
-    url: "https://evasmartshower.vercel.app/",
-    site_name: "Eva Smart Shower"
+    url: "http://localhost:3000/",
+    site_name: "Eva Smart Shower",
+    robots: "follow, index"
   },
   twitter: {
     handle: "@handle",

@@ -1,7 +1,7 @@
 {
-  "name": "",
-  "short_name": "",
-  "description": "",
+  "name": "Eva Smart Shower",
+  "short_name": "Eva",
+  "description": "Eva ile banyonuz daha değerli.",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",

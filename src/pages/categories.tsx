@@ -24,7 +24,7 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
       <div className="mx-auto flex  min-h-screen max-w-2xl flex-col items-start justify-center border-gray-200 dark:border-gray-700">
         <div className="mb-12 flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2   md:pr-6 md:text-5xl">
+            <h1 className="pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2  md:pr-6 md:text-5xl">
               {t("models")}
             </h1>
           </div>
@@ -48,7 +48,7 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
         </div>
         <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 md:mb-6 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
-            <h1 className="text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2   md:pr-6 md:text-5xl">
+            <h1 className="pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2   md:pr-6 md:text-5xl">
               {t("tags")}
             </h1>
           </div>

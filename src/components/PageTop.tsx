@@ -20,7 +20,7 @@ export function PageTop({
   text
 }: PageTopProps) {
   return (
-    <div className="flex flex-row items-start">
+    <div className="flex flex-col-reverse items-start md:flex-row">
       <div className="flex flex-col py-4 pr-8">
         <h1 className="gradient-header my-1 pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
           {title}
@@ -36,7 +36,7 @@ export function PageTop({
         </div>
       </div>
       {pictureUrl && (
-        <div className="flex-col">
+        <div className="flex">
           <div className="lg:h-54 lg:w-54 h-32 w-32 bg-local md:h-48  md:w-48 xl:h-72 xl:w-72">
             <SanityImage
               alt={title}

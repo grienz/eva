@@ -25,7 +25,7 @@ function getSocialIconByLink(url: string) {
   }
   return null;
 }
-// eslint-disable-next-line import/prefer-default-export
+
 export function Socials({ socials }: { socials: string[] }) {
   const icons = socials.map((social, index) => (
     <ExternalLink key={index} href={social}>

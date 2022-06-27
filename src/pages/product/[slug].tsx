@@ -35,7 +35,7 @@ export default function Product({ product, relatedProducts }: Props) {
     >
       <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-12">
         <div className="flex flex-col">
-          <h1 className="text-3xl font-bold tracking-tight text-gray-800  dark:text-gray-200 md:text-5xl">
+          <h1 className="gradient-header text-3xl font-bold tracking-tight md:text-5xl">
             {product.productTitle}
           </h1>
           <div className="mb-2 flex flex-row justify-end py-2 text-sm">
@@ -48,7 +48,7 @@ export default function Product({ product, relatedProducts }: Props) {
             height={GLOBAL_CONFIG.images.defaultProductImageHeight}
           />
 
-          <div className="mt-4 flex flex-row pt-2">
+          <div className="mt-4 mb-4 flex flex-row">
             <ProductMeta date={product.productDate} model={product.model} />
           </div>
         </div>

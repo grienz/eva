@@ -28,9 +28,9 @@ export function Container(props: ContainerProps) {
           publishedTime: props.date,
           tags: props.tags.map((tag) => tag.tagName),
           models: [
-            `https://${
-              locale === "tr" ? "" : "en"
-            }evasmartshower.vercel.app/model/${props.model.modelSlug}`
+            `https://${locale === "tr" ? "" : "en"}localhost:3000/model/${
+              props.model.modelSlug
+            }`
           ],
           description
         }
@@ -42,9 +42,7 @@ export function Container(props: ContainerProps) {
       title: props.title,
       locale,
       article: articleData,
-      url:
-        `https://evasmartshower.vercel.app${router.asPath}` ??
-        "https://evasmartshower.vercel.app",
+      url: `http://localhost:3000${router.asPath}` ?? "http://localhost:3000",
       type: props.type ?? "page",
       image: props.ogImage ?? "/og.png",
       description,
