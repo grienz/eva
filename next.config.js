@@ -34,8 +34,8 @@ module.exports = withBundleAnalyzer({
   },
   async rewrites() {
     return [BEE_REWRITE, HIVE_REWRITE];
-  }
-  /*   webpack: (config, { dev, isServer }) => {
+  },
+  webpack: (config, { dev, isServer }) => {
     // Replace React with Preact only in client production build
     if (!dev && !isServer) {
       Object.assign(config.resolve.alias, {
@@ -46,5 +46,5 @@ module.exports = withBundleAnalyzer({
     }
 
     return config;
-  } */
+  }
 });

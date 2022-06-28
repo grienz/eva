@@ -41,7 +41,7 @@ export function PageTop({
             <SanityImage
               alt={title}
               width={GLOBAL_CONFIG.images.defaultRoundImageWidthHeight}
-              isRounded={true}
+              isRounded={false}
               url={pictureUrl}
             />
           </div>

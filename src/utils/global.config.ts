@@ -1,3 +1,5 @@
+import { logo } from "@/components/Icons";
+
 export const GLOBAL_CONFIG = {
   pagination: {
     pageSize: 8,
@@ -15,13 +17,13 @@ export const GLOBAL_CONFIG = {
     defaultQuality: 80
   },
   menuLinks: [
-    { href: "/", title: "home" },
+    { href: "/", title: "home", icon: logo },
     { href: "/product/list/1", title: "product" },
     { href: "/categories", title: "categories" },
     { href: "/about", title: "about" },
     { href: "/contact", title: "contact" }
   ],
-  siteUrl: "http://localhost:3000",
+  siteUrl: "https://evasmartshower.vercel.app",
   instagramLink: "https://www.instagram.com/evasmartshower/",
   telegramLink: "https://t.me/evasmartshower",
   facebookLink: "https://www.facebook.com/",
@@ -46,7 +48,7 @@ export const SEO = {
     titleTemplate: "EVA Smart Shower. Banyonuza değer katar.",
     description: "Duşakabin ve banyo sistemleri imalat, montaj hizmeti.",
     type: "website",
-    url: "http://localhost:3000/",
+    url: "https://evasmartshower.vercel.app/",
     site_name: "Eva Smart Shower",
     robots: "follow, index"
   },

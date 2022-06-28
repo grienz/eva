@@ -4,7 +4,15 @@ import { useRouter } from "next/router";
 
 import { getActiveStatus } from "@/utils/contentUtils";
 
-export function NavItemHeader({ href, text }: { href: string; text: string }) {
+export function NavItemHeader({
+  href,
+  text,
+  icon
+}: {
+  href: string;
+  text: string;
+  icon: JSX.Element;
+}) {
   const router = useRouter();
   return (
     <Link href={href}>
@@ -17,6 +25,9 @@ export function NavItemHeader({ href, text }: { href: string; text: string }) {
         )}
       >
         <span className="capsize">{text}</span>
+        <div className="capsize mx-2 lg:hidden xl:hidden 2xl:hidden">
+          {icon}
+        </div>
       </a>
     </Link>
   );

@@ -23,6 +23,7 @@ export function Header() {
               href={link.href}
               text={index === 0 ? `${GLOBAL_CONFIG.copyright}` : t(link.title)}
               key={link.title}
+              icon={link.icon}
             />
           ))}
         </div>
