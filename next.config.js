@@ -32,6 +32,11 @@ module.exports = withBundleAnalyzer({
       loader: "custom"
     }
   },
+  experimental: {
+    legacyBrowsers: false,
+    browsersListForSwc: true,
+    images: { allowFutureImage: true }
+  },
   async rewrites() {
     return [BEE_REWRITE, HIVE_REWRITE];
   },

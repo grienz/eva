@@ -17,7 +17,6 @@ export default function Contact({ pageData }: Props) {
           <PageTop
             title={pageData.pageTitle}
             subtitle=""
-            pictureUrl={pageData.pagePicture}
             text={pageData.pageText}
           />
         )}

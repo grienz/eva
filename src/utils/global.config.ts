@@ -1,5 +1,3 @@
-import { logo } from "@/components/Icons";
-
 export const GLOBAL_CONFIG = {
   pagination: {
     pageSize: 8,
@@ -17,7 +15,7 @@ export const GLOBAL_CONFIG = {
     defaultQuality: 80
   },
   menuLinks: [
-    { href: "/", title: "home", icon: logo },
+    { href: "/", title: "home" },
     { href: "/product/list/1", title: "product" },
     { href: "/categories", title: "categories" },
     { href: "/about", title: "about" },

@@ -1,13 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { ExternalLink } from "@/components/ExternalLink";
-import {
-  facebook,
-  github,
-  instagram,
-  mail,
-  telegram
-} from "@/components/Icons";
+import { facebook, instagram, logo, mail, telegram } from "@/components/Icons";
 import { NavItemFooter } from "@/components/NavItemFooter";
 import { SectionSeparator } from "@/components/SectionSeparator";
 import { GLOBAL_CONFIG } from "@/utils/global.config";
@@ -43,18 +37,18 @@ export function Footer() {
           <ExternalLink href={GLOBAL_CONFIG.mail}>{mail}</ExternalLink>
         </div>
       </div>
-      <div className="my-4 flex items-center justify-center py-2 text-sm">
+      <div className="my-4 flex flex-row items-center justify-center py-2 text-sm">
         <a
-          className="items-center text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
+          className=" pb-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
           target="_blank"
           rel="noopener noreferrer"
           href={GLOBAL_CONFIG.githubLink}
           title={t("sourcecode")}
         >
-          {github}
+          {logo}
         </a>
         <a
-          className="items-center  pl-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
+          className="  pl-2 text-xs font-thin text-gray-800 transition-all delay-100 hover:text-sky-600 dark:text-gray-50 dark:hover:text-sky-400 md:text-sm"
           rel="noopener noreferrer"
           title={GLOBAL_CONFIG.copyright}
         >

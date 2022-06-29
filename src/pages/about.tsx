@@ -15,7 +15,6 @@ export default function About({ pageData }: Props) {
             title={pageData.pageTitle}
             subtitle=""
             text={pageData.pageText}
-            pictureUrl={pageData.pagePicture}
           />
         )}
       </div>

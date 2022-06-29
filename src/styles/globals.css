@@ -91,7 +91,7 @@ html {
 }
 
 .prose h4 {
-  @apply py-3 text-2xl font-medium text-sky-600 dark:text-sky-400;
+  @apply pt-4 text-2xl font-medium text-sky-600 dark:text-sky-400;
 }
 
 .prose h5 {
@@ -119,7 +119,7 @@ html {
 } */
 
 .prose > ul {
-  @apply py-6;
+  @apply pb-6 pt-6;
 }
 
 .prose > ul > li {
