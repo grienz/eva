@@ -13,7 +13,7 @@ export function NavItemFooter({ href, text }: { href: string; text: string }) {
           getActiveStatus(href, router.asPath)
             ? "text-sky-600 dark:text-sky-400"
             : "text-gray-800  dark:text-gray-50",
-          "nav-link items-center pr-4 text-sm font-medium md:text-base"
+          "nav-link navbar-link items-center pr-4 text-sm font-medium  md:text-base"
         )}
       >
         <span className="capsize">{text}</span>

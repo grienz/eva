@@ -10,7 +10,6 @@ import { SectionSeparator } from "@/components/SectionSeparator";
 import { Subtitle } from "@/components/Subtitle";
 import { Tags } from "@/components/Tags";
 import { getAllProductSlugs, getProductAndRelatedProducts } from "@/utils/api";
-import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -44,8 +43,6 @@ export default function Product({ product, relatedProducts }: Props) {
           <SanityImage
             alt={product.productTitle}
             url={product.productImageUrl}
-            width={GLOBAL_CONFIG.images.defaultProductImageWidth}
-            height={GLOBAL_CONFIG.images.defaultProductImageHeight}
           />
 
           <div className="mt-4 mb-4 flex flex-row">

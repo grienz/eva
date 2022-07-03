@@ -12,7 +12,7 @@ export function Tags({ tags }: { tags: TagBase[] }) {
               {`${tag.tagName}`}
             </a> */}
 
-            <a className="my-1 mr-1 border-stone-900 p-1 text-xs lowercase text-stone-900 transition-all delay-100 hover:text-sky-600  dark:text-stone-100 dark:hover:text-sky-400">
+            <a className="font-small my-1 mr-0.5 border-stone-900 p-0.5 text-xs lowercase text-stone-900 transition-all delay-100 hover:text-sky-600  dark:text-stone-100 dark:hover:text-sky-400">
               <span className=" text-sky-600 dark:text-sky-400">#</span>
               {`${tag.tagName}`}
             </a>

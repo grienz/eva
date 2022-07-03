@@ -9,7 +9,7 @@ import { getDescription } from "@/utils/contentUtils";
 import ScrollTopButton from "./ScrollTopButton";
 
 type ContainerProps = {
-  title?: string;
+  title: string;
   description?: PortableText;
   ogImage?: string;
   type?: string;
@@ -27,11 +27,13 @@ export function Container(props: ContainerProps) {
       ? {
           publishedTime: props.date,
           tags: props.tags.map((tag) => tag.tagName),
-          models: [
-            `https://${
-              locale === "tr" ? "" : "en"
-            }evasmartshower.vercel.app/model/${props.model.modelSlug}`
-          ],
+          models: props.model
+            ? [
+                `https://${
+                  locale === "tr" ? "" : "en."
+                }evasmartshower.vercel.app/model/${props.model.modelSlug}`
+              ]
+            : [""],
           description
         }
       : {};

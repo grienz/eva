@@ -24,7 +24,7 @@ export default function Model({ model, modelProducts }: Props) {
             <PageTop
               title={model.modelName}
               subtitle=""
-              socials={model.modelSocials}
+              // socials={model.modelSocials}
               pictureUrl={model.modelPicture}
               text={model.modelInfo}
             />

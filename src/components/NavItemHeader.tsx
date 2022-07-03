@@ -13,7 +13,7 @@ export function NavItemHeader({ href, text }: { href: string; text: string }) {
           getActiveStatus(href, router.asPath)
             ? "text-sky-600 dark:text-sky-400"
             : "text-gray-800  dark:text-gray-50",
-          "nav-link inline-block py-2 pr-4  text-base font-medium md:text-xl lg:py-4"
+          "nav-link navbar-link inline-block  py-2 pr-4 text-base font-medium md:text-xl  lg:py-4"
         )}
       >
         <span className="capsize">{text}</span>

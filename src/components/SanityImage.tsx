@@ -3,44 +3,39 @@ import Img from "next/image";
 import Link from "next/link";
 
 import { shimmer, toBase64 } from "@/utils/contentUtils";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 import { urlFor } from "@/utils/sanity";
 
 export type SanityImageType = {
   url: string;
-  width: number;
-  height?: number;
   alt?: string;
   slug?: string;
-  isRounded?: boolean;
 };
 
 export function SanityImage({
   url,
-  width,
-  height = width,
   alt = "A placeholder text for image",
-  slug = "",
-  isRounded = false
+  slug = ""
 }: SanityImageType) {
   const urlWithProps = urlFor(url).auto("format").url();
   const image = (
     <Img
       alt={alt}
       src={urlWithProps}
-      // loader={sanityImageLoader}
-      width={width}
-      height={height}
-      layout="responsive"
-      objectFit="cover"
+      loader={({ src, width, quality }) => `${src}?w=${width}&q=${quality}`}
+      width={GLOBAL_CONFIG.images.defaultProductImageWidth}
+      height={GLOBAL_CONFIG.images.defaultProductImageHeight}
       placeholder="blur"
       unoptimized={true}
       blurDataURL={`data:image/svg+xml;base64,${toBase64(
-        shimmer(width, height)
+        shimmer(
+          GLOBAL_CONFIG.images.defaultProductImageWidth,
+          GLOBAL_CONFIG.images.defaultProductImageWidth
+        )
       )}`}
       className={cn({
         "transition-opacity hover:opacity-75": slug,
-        "rounded-full": isRounded,
-        "rounded-lg": !isRounded
+        "rounded-lg object-cover": true
       })}
     />
   );

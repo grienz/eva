@@ -12,7 +12,7 @@ export function Header() {
   useEffect(() => setMounted(true), []);
 
   return (
-    <nav className="pb-8 pt-4 sm:pb-16">
+    <nav className="pb-4 pt-4 sm:pb-8">
       <a href="#skip" className="skip-nav">
         &gt;
       </a>
@@ -21,7 +21,7 @@ export function Header() {
           {GLOBAL_CONFIG.menuLinks.map((link, index) => (
             <NavItemHeader
               href={link.href}
-              text={index === 0 ? `${GLOBAL_CONFIG.copyright}` : t(link.title)}
+              text={index === 0 ? `${t("home")}` : t(link.title)}
               key={link.title}
             />
           ))}

@@ -13,13 +13,11 @@ export type ProductMetaProps = {
 export function ProductMeta({ model, date }: ProductMetaProps) {
   const intl = useIntl();
   return (
-    <>
-      <div className="relative">
-        <AvatarImage url={model.modelPicture} alt={model.modelName} />
-      </div>
-      <div className="flex-1 px-2">
+    <div className="ml-2 mt-1 mb-1 flex flex-row">
+      <AvatarImage url={model.modelPicture} alt={model.modelName} />
+      <div className="flex-1 pl-2">
         <Link href={`/model/${model.modelSlug}`}>
-          <a className="text-base font-bold transition-all  delay-100 hover:text-sky-600 dark:hover:text-sky-400">
+          <a className="text-sm font-bold text-slate-800 transition-all delay-100 hover:text-sky-600 dark:text-slate-100 dark:hover:text-sky-400">
             {model.modelName}
           </a>
         </Link>
@@ -32,6 +30,6 @@ export function ProductMeta({ model, date }: ProductMetaProps) {
           </time>
         </p>
       </div>
-    </>
+    </div>
   );
 }

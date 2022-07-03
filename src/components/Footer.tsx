@@ -19,7 +19,7 @@ export function Footer() {
           {GLOBAL_CONFIG.menuLinks.map((link, index) => (
             <NavItemFooter
               href={link.href}
-              text={index === 0 ? `${GLOBAL_CONFIG.copyright}` : t(link.title)}
+              text={index === 0 ? `${t("home")}` : t(link.title)}
               key={link.title}
             />
           ))}

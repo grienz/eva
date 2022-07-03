@@ -1,8 +1,7 @@
 import { ProductBody } from "@/components/ProductBody";
-import { SanityImage } from "@/components/SanityImage";
+import { RoundImage } from "@/components/RoundImage";
 import { Socials } from "@/components/Socials";
 import type { PortableText } from "@/typings/schema-types";
-import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 export type PageTopProps = {
   title: string;
@@ -20,30 +19,25 @@ export function PageTop({
   text
 }: PageTopProps) {
   return (
-    <div className="flex flex-col-reverse items-start md:flex-row">
-      <div className="flex flex-col py-4 pr-8">
-        <h1 className="gradient-header my-1 pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
+    <div className="flex flex-col-reverse items-start justify-center md:flex-row">
+      <div className="flex flex-col pr-4">
+        <h1 className="gradient-header mb-1 pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
           {title}
         </h1>
         {subtitle && (
-          <h2 className="my-1 pb-1 text-2xl  font-medium tracking-tight text-gray-800  dark:text-gray-200 md:text-3xl">
+          <h2 className="mb-1 pb-1 text-2xl  font-medium tracking-tight text-gray-800  dark:text-gray-200 md:text-3xl">
             {subtitle}
           </h2>
         )}
         <ProductBody text={text} />
-        <div className="my-1 items-center align-middle">
+        <div className="mb-1 flex items-center align-middle">
           {socials.length > 0 && <Socials socials={socials} />}
         </div>
       </div>
       {pictureUrl && (
         <div className="flex">
-          <div className="lg:h-54 lg:w-54 h-32 w-32 bg-local md:h-48  md:w-48 xl:h-72 xl:w-72">
-            <SanityImage
-              alt={title}
-              width={GLOBAL_CONFIG.images.defaultRoundImageWidthHeight}
-              isRounded={false}
-              url={pictureUrl}
-            />
+          <div className="lg:h-76 lg:w-76 h-48 w-48 md:mb-0 md:h-64 md:w-64">
+            <RoundImage alt={title} url={pictureUrl} />
           </div>
         </div>
       )}

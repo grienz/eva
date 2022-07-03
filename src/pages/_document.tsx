@@ -1,6 +1,5 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
-// eslint-disable-next-line unused-imports/no-unused-vars
 class MyDocument extends Document {
   // eslint-disable-next-line class-methods-use-this
   render() {

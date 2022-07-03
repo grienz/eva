@@ -2,7 +2,6 @@ import Img from "next/image";
 
 import { GLOBAL_CONFIG } from "@/utils/global.config";
 
-// eslint-disable-next-line import/prefer-default-export
 export function AvatarImage({
   url,
   alt = "A placeholder for image"

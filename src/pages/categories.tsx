@@ -21,10 +21,13 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
   );
   return (
     <Container title={t("categories")}>
-      <div className="mx-auto flex  min-h-screen max-w-2xl flex-col items-start justify-center border-gray-200 dark:border-gray-700">
-        <div className="mb-12 flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
+      <div className="gradient-header pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
+        {t("categories")}
+      </div>
+      <div className="mx-auto flex  min-h-screen max-w-2xl flex-col items-start justify-center border-sky-200 dark:border-gray-700">
+        <div className="mb-12 flex flex-col items-start justify-start divide-y divide-sky-600 dark:divide-sky-400 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
-            <h1 className="pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2  md:pr-6 md:text-5xl">
+            <h1 className="border-sky-600 pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:border-sky-400 dark:text-gray-200 sm:leading-10 md:border-r-2 md:pr-6 md:text-5xl">
               {t("models")}
             </h1>
           </div>
@@ -34,7 +37,7 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
               sortedModels.map((model) => (
                 <div key={model.modelSlug} className="m-2">
                   <Link href={`/model/${model.modelSlug}`}>
-                    <a className="m-2 flex text-base font-medium text-stone-900 transition-all delay-100 hover:text-sky-600 dark:text-stone-100 dark:hover:text-sky-400">
+                    <a className="m-0.5 flex p-0.5 text-base font-medium text-stone-900 transition-all delay-100 hover:text-sky-600 dark:text-stone-100 dark:hover:text-sky-400">
                       <AvatarImage
                         url={model.modelPicture}
                         alt={model.modelName}
@@ -46,9 +49,9 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
               ))}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start divide-y divide-gray-300 dark:divide-gray-500 md:mb-6 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
+        <div className="flex flex-col items-start justify-start divide-y divide-sky-600 dark:divide-sky-400 md:mb-6 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
-            <h1 className="pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:text-gray-200 sm:leading-10 md:border-r-2   md:pr-6 md:text-5xl">
+            <h1 className="border-sky-600 pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:border-sky-400 dark:text-gray-200 sm:leading-10 md:border-r-2  md:pr-6 md:text-5xl">
               {t("tags")}
             </h1>
           </div>
@@ -58,7 +61,7 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
               sortedTags.map((tag) => (
                 <div key={tag.tagSlug} className="m-4">
                   <Link href={`/tag/${tag.tagSlug}`}>
-                    <a className="m-2 flex text-base font-medium text-stone-900 transition-all delay-100 hover:text-sky-600 dark:text-stone-100 dark:hover:text-sky-400">
+                    <a className="m-0.5 flex p-0.5 text-base font-medium  text-stone-900 transition-all delay-100 hover:text-sky-600 dark:text-stone-100 dark:hover:text-sky-400">
                       <AvatarImage url={tag.tagPicture} alt={tag.tagName} />
                       <span className="m-1 p-1">{`${tag.tagName} (${tag.relatedProductsCount})`}</span>
                     </a>
