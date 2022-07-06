@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className="m-5 flex flex-col p-5 ">
+    <div className="my-6 mx-auto flex w-full max-w-2xl flex-col justify-center">
       <form
         onSubmit={handleSubmit(onSubmit)}
         className="flex flex-col rounded-md border border-sky-600 p-4 dark:border-sky-400"

@@ -24,7 +24,7 @@ export function ProductCard({
   slug
 }: ProductCardProps) {
   return (
-    <div className="my-2 rounded-md border-1 border-sky-600 bg-slate-200 p-0.5 dark:border-sky-400 dark:bg-slate-600 md:my-0">
+    <div className="my-2 rounded-md border-1 border-sky-600 bg-slate-200 p-0.5 dark:border-sky-400 dark:bg-slate-800 md:my-0">
       <SanityImage slug={slug} alt={title} url={previewImage} />
       <h4 className="navbar-link my-2 ml-2 text-xl font-medium ">
         <Link href={`/product/${slug}`}>

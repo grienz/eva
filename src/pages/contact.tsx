@@ -12,7 +12,7 @@ export default function Contact({ pageData }: Props) {
       ogImage={pageData.pagePicture}
       description={pageData.pageText}
     >
-      <div className="flex max-w-2xl flex-col items-start justify-start">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-start">
         {pageData && (
           <PageTop
             title={pageData.pageTitle}
@@ -23,7 +23,6 @@ export default function Contact({ pageData }: Props) {
       </div>
       <SectionSeparator />
       <ContactForm />
-      <SectionSeparator />
       <GoogleMaps />
     </Container>
   );

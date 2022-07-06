@@ -3,10 +3,12 @@ import { useTranslations } from "next-intl";
 
 import { AvatarImage } from "@/components/AvatarImage";
 import { Container } from "@/components/Container";
+import { catalogdownload } from "@/components/Icons";
 import {
   getModelsAndRelatedProductsCount,
   getTagsAndRelatedProductsCount
 } from "@/utils/api";
+import { GLOBAL_CONFIG } from "@/utils/global.config";
 
 type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 type Props = UnwrapPromise<ReturnType<typeof getStaticProps>>["props"];
@@ -21,9 +23,6 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
   );
   return (
     <Container title={t("categories")}>
-      <div className="gradient-header pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
-        {t("categories")}
-      </div>
       <div className="mx-auto flex  min-h-screen max-w-2xl flex-col items-start justify-center border-sky-200 dark:border-gray-700">
         <div className="mb-12 flex flex-col items-start justify-start divide-y divide-sky-600 dark:divide-sky-400 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
@@ -49,7 +48,7 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
               ))}
           </div>
         </div>
-        <div className="flex flex-col items-start justify-start divide-y divide-sky-600 dark:divide-sky-400 md:mb-6 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
+        <div className="mb-6 flex flex-col items-start justify-start divide-y divide-sky-600 dark:divide-sky-400 md:flex-row md:items-center md:justify-center md:space-x-6 md:divide-y-0">
           <div className="space-x-2 pt-2 md:space-y-5">
             <h1 className="border-sky-600 pb-2 text-3xl font-bold tracking-tight text-gray-800 dark:border-sky-400 dark:text-gray-200 sm:leading-10 md:border-r-2  md:pr-6 md:text-5xl">
               {t("tags")}
@@ -70,6 +69,16 @@ export default function GetAllModelsAndTags({ models, tags }: Props) {
               ))}
           </div>
         </div>
+        <a
+          href={GLOBAL_CONFIG.catalog}
+          target="_blank"
+          title={t("catalog")}
+          rel="noopener noreferrer"
+        >
+          <button className="flex flex-row items-center rounded-lg border border-transparent bg-sky-400 px-6 py-2 text-sm font-medium text-white shadow transition-colors duration-150 hover:bg-sky-600 focus:outline-none  dark:bg-sky-600 dark:hover:bg-sky-400">
+            {t("catalog")} - {catalogdownload}
+          </button>
+        </a>
       </div>
     </Container>
   );

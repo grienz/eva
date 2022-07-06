@@ -9,7 +9,7 @@ export default function About({ pageData }: Props) {
       ogImage={pageData.pagePicture}
       description={pageData.pageText}
     >
-      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center border-gray-200 pb-16 dark:border-gray-700">
+      <div className="mx-auto flex max-w-2xl flex-col items-start justify-center">
         {pageData && (
           <PageTop
             title={pageData.pageTitle}

@@ -4,7 +4,13 @@ import { FaArrowCircleUp, FaShower } from "react-icons/fa";
 import { HiOutlineIdentification } from "react-icons/hi";
 import { MdAlternateEmail } from "react-icons/md";
 import { RiFacebookCircleLine } from "react-icons/ri";
-import { TbBath, TbBrandGithub, TbBrandTelegram } from "react-icons/tb";
+import {
+  TbBath,
+  TbBook2,
+  TbBookDownload,
+  TbBrandGithub,
+  TbBrandTelegram
+} from "react-icons/tb";
 
 export const youtube = (
   <svg
@@ -50,6 +56,10 @@ export const github = <TbBrandGithub />;
 export const product = <TbBath />;
 
 export const category = <FaShower />;
+
+export const catalog = <TbBook2 />;
+
+export const catalogdownload = <TbBookDownload />;
 
 export const logo = (
   <svg

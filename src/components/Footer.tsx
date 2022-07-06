@@ -1,7 +1,14 @@
 import { useTranslations } from "next-intl";
 
 import { ExternalLink } from "@/components/ExternalLink";
-import { facebook, instagram, logo, mail, telegram } from "@/components/Icons";
+import {
+  catalog,
+  facebook,
+  instagram,
+  logo,
+  mail,
+  telegram
+} from "@/components/Icons";
 import { NavItemFooter } from "@/components/NavItemFooter";
 import { SectionSeparator } from "@/components/SectionSeparator";
 import { GLOBAL_CONFIG } from "@/utils/global.config";
@@ -25,16 +32,21 @@ export function Footer() {
           ))}
         </div>
         <div className="inline-flex items-center">
-          <ExternalLink href={GLOBAL_CONFIG.telegramLink}>
+          <ExternalLink href={GLOBAL_CONFIG.telegramLink} title="Telegram">
             {telegram}
           </ExternalLink>
-          <ExternalLink href={GLOBAL_CONFIG.facebookLink}>
+          <ExternalLink href={GLOBAL_CONFIG.facebookLink} title="Facebook">
             {facebook}
           </ExternalLink>
-          <ExternalLink href={GLOBAL_CONFIG.instagramLink}>
+          <ExternalLink href={GLOBAL_CONFIG.instagramLink} title="Instagram">
             {instagram}
           </ExternalLink>
-          <ExternalLink href={GLOBAL_CONFIG.mail}>{mail}</ExternalLink>
+          <ExternalLink href={GLOBAL_CONFIG.mail} title="Mail">
+            {mail}
+          </ExternalLink>
+          <ExternalLink href={GLOBAL_CONFIG.catalog} title="Catalog">
+            {catalog}
+          </ExternalLink>
         </div>
       </div>
       <div className="my-4 flex flex-row items-center justify-center py-2 text-sm">

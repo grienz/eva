@@ -28,6 +28,7 @@ export const GLOBAL_CONFIG = {
   githubLink: "https://github.com/grienz/eva",
   youtubeLink: "https://www.youtube.com/channel",
   mail: "mailto:evasmartshower@gmail.com",
+  catalog: "/eva_catalog_2022.pdf",
   copyright: "Eva Smart Shower",
   trimmedHeaderLength: 55
 };

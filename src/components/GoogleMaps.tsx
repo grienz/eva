@@ -7,7 +7,7 @@ export function GoogleMaps() {
       loading="lazy"
       frameBorder="0"
       allowFullScreen
-      className="m-2 flex min-w-fit flex-row justify-center rounded-md border-1 border-sky-600 p-1 dark:border-sky-400"
+      className="m-2 mx-auto flex w-full  max-w-2xl  flex-row justify-center rounded-md border-1 border-sky-600 p-1 dark:border-sky-400"
     ></iframe>
   );
 }
