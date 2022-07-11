@@ -34,7 +34,7 @@ export default function Product({ product, relatedProducts }: Props) {
     >
       <div className="mx-auto flex max-w-2xl flex-col items-start justify-center pb-12">
         <div className="flex flex-col">
-          <h1 className="gradient-header text-3xl font-bold tracking-tight md:text-5xl">
+          <h1 className="gradient-header pb-1 text-3xl font-bold tracking-tight md:text-5xl">
             {product.productTitle}
           </h1>
           <div className="mb-2 flex flex-row justify-end py-2 text-sm">
