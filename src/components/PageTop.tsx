@@ -19,9 +19,9 @@ export function PageTop({
   text
 }: PageTopProps) {
   return (
-    <div className="flex flex-col-reverse items-start justify-center md:flex-row">
-      <div className="flex flex-col pr-4">
-        <h1 className="gradient-header mb-1 pb-1 text-3xl font-bold  tracking-tight md:text-5xl">
+    <div className="flex flex-col-reverse items-start sm:flex-row">
+      <div className="flex flex-col pr-8">
+        <h1 className="gradient-header mb-1 pb-2 text-3xl font-bold tracking-tight md:text-5xl">
           {title}
         </h1>
         {subtitle && (
@@ -36,7 +36,7 @@ export function PageTop({
       </div>
       {pictureUrl && (
         <div className="flex">
-          <div className="lg:h-76 lg:w-76 h-48 w-48 md:mb-0 md:h-64 md:w-64">
+          <div className="lg:h-76 lg:w-76 mb-4 h-48 w-48 md:mb-0 md:h-64 md:w-64">
             <RoundImage alt={title} url={pictureUrl} />
           </div>
         </div>

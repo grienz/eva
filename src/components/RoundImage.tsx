@@ -30,7 +30,7 @@ export function RoundImage({
           GLOBAL_CONFIG.images.defaultRoundImageWidthHeight
         )
       )}`}
-      className="rounded-lg object-cover"
+      className="rounded-full object-cover"
     />
   );
   return <div className="relative sm:mx-0">{image}</div>;

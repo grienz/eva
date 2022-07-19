@@ -1,3 +1,9 @@
+# *
 User-agent: *
-Allow: /
-Disallow: /studio/*
+Allow: / 
+
+# Host
+Host: https://evasmartshower.vercel.app
+
+# Sitemaps
+Sitemap: https://evasmartshower.vercel.app/sitemap.xml

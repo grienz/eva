@@ -66,7 +66,7 @@ export function Container(props: ContainerProps) {
       <NextSeo {...seoData} />
       <main
         id="skip"
-        className="mx-auto flex min-w-full max-w-3xl flex-col justify-center bg-slate-100 px-6  text-lg text-slate-500 dark:bg-slate-900 dark:text-slate-400 md:px-8"
+        className="mx-auto flex min-w-fit max-w-2xl flex-col  justify-center bg-slate-100 px-6  text-lg text-slate-500 dark:bg-slate-900 dark:text-slate-400 md:px-8"
       >
         <Header />
         {props.children}
