@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development next dev",
     "build": "next build",
-    "prebuild": "cd studio && yarn -s && yarn @sanity/cli build ../public/studio -y",
+    "prebuild": "cd studio && yarn -s && npx @sanity/cli build ../public/studio -y",
     "start": "next start",
     "start:sanity": "cp .env ./studio/.env.development && cd studio && sanity start",
     "analyze": "cross-env ANALYZE=true next build",
