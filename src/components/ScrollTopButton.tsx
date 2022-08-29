@@ -1,9 +1,9 @@
-import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import { motion, useAnimation, useScroll } from "framer-motion";
 import { useEffect } from "react";
 import { FaArrowCircleUp } from "react-icons/fa";
 
 const ScrollTopButton = (): JSX.Element => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const animation = useAnimation();
 
   const checkScrollTop = () => {
